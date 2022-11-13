@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2020-01-21">
+
+<title>JH - Lollipop Charts - A Sweet Data Viz Technique</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Lollipop Charts - A Sweet Data Viz Technique</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">tableau</div>
+                <div class="quarto-category">lollipop</div>
+                <div class="quarto-category">shapes</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">makeovermonday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 21, 2020</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Have you ever combined multiple seemingly unrelated interests into one project? I personally love it when I can do that. Today’s inspiration combines watercolor paint, Photoshop, and <a href="https://public.tableau.com/s/">Tableau Public</a>. How sweet!</p>
+<p>In the <a href="https://www.makeovermonday.co.uk/data/">MakeoverMonday #Datafam community</a>, the 2020 Week 3 data set explores the amount of sugar that UK residents consume across different age groups.</p>
+<p>Upon seeing this data set, I immediately thought to approach it creatively because these weekly data exercises are meant to be educational…. and fun!</p>
+<p>The topic of this week’s practice focused on sugar consumption, so it provided a sweet opportunity to try not only custom shapes in Tableau but also a neat chart technique.</p>
+<p>What I will show next may not be “best practices” for the corporate world, but it sure was fun to create.</p>
+<p>Follow along and learn how to use custom shapes and create what is called a Lollipop chart!</p>
+<section id="watercolor-painting" class="level3">
+<h3 class="anchored" data-anchor-id="watercolor-painting"><strong>Watercolor Painting</strong></h3>
+<p>I first pulled out my leftover watercolor paint supplies from one of my projects from <a href="https://www.letsmakeart.com/">Let’s Make Art</a> and started sketching a doughnut with a bite taken out of it.</p>
+<p><img src="1_sketch-doughnut.jpg" class="img-fluid">From here, I started pouring out the watercolor paints and planning out the colors I wanted to make the doughnut.</p>
+<p><img src="2_paint-tray-Edited-2.jpg" class="img-fluid"></p>
+<p>Just a quick note here about these paints. <a href="http://letsmakeart.com/">Let’s Make Art</a> makes watercolor painting such a wonderfully portable hobby. The little paints take barely a minute to set up! I highly recommend it if you’re looking for an easy to set up creative outlet! I keep all my supplies (including the tray) all within my desktop monitor stands.</p>
+</section>
+<section id="photoshop" class="level3">
+<h3 class="anchored" data-anchor-id="photoshop"><strong>Photoshop</strong></h3>
+<p>I then took a picture of the completed doughnut and brought it into Photoshop to clean it up.</p>
+<p><img src="3_painting-doughnut-Edited.jpg" class="img-fluid"></p>
+<p><img src="4_Doughnut_Photoshop-1024x611.png" class="img-fluid"></p>
+<p>Cutting out the background of the completed watercolor doughnut picture with Photoshop. The image was saved as a .png to keep the background transparent.</p>
+<p>Now that the doughnut is ready to go, let’s see how this goes into the data visualization!</p>
+</section>
+<section id="tableau-custom-shapes" class="level3">
+<h3 class="anchored" data-anchor-id="tableau-custom-shapes"><strong>Tableau Custom Shapes</strong></h3>
+<p>Tableau happens to have a folder directory called “My Tableau Repository,” and this is where you can place custom images into the Shapes folder. As you can see, there are already a lot of images that are meant for best practices often in business settings.</p>
+<p>However, today I decided that it is all about creativity and fun. I created a “Custom” folder and yep, you betcha I copied and pasted my <em>doughnut.png</em> file there!</p>
+<p><img src="5_Tableau-Repository-Shapes.png" class="img-fluid"></p>
+<p>Once I connected the source data to my Tableau workbook, I set out to incorporate the custom shapes in the software. The “original” set up data visualization was a bar chart, so I changed it to “Shapes” on the marks card. I then clicked on Shapes&gt;More Shapes&gt;Reload Shapes to get my new custom image to show up.</p>
+<p>You’ll recognize that the list follows the Tableau Repository folder structure.</p>
+<p><img src="6_Tableau-Shapes_1.png" class="img-fluid"></p>
+<p><img src="7_Tableau-Custom-Shape.png" class="img-fluid"></p>
+<p>For the purpose of my data visualization, I decided to focus on the time period from 2014-2016 for all age groups. Others were included in the original data set.</p>
+<p><img src="8_Doughnut-shape-chart-1024x591.png" class="img-fluid"></p>
+<p>Doughnut shape chart with 2014-2016 percentages on the columns shelf, free sugar intake on the rows shelf, and free sugar intake on the filters card to filter out the other age group categories.</p>
+<p>From here I adjusted the cell size to make my doughnuts much larger on the chart. Originally, they came in much smaller.</p>
+<p><img src="9_Taller-Cell-1024x544.png" class="img-fluid"></p>
+<p>As I was creating this data visualization, I originally wanted to have the doughnuts themselves create bars across the screen for each category. Then I realized this would look way too busy, so I looked into what is called a Lollipop chart instead. I might revisit that at a later date.</p>
+</section>
+<section id="lollipop-chart" class="level3">
+<h3 class="anchored" data-anchor-id="lollipop-chart"><strong>Lollipop Chart</strong></h3>
+<p>First, I placed the same 2014-2016 pill on the columns shelf again, so I got two side by side charts. I then right clicked on the second chart axis to create a Dual Axis chart.</p>
+<p><img src="10_Dual-Axis.png" class="img-fluid"></p>
+<p>So what this did at first was essentially make it look like one of the charts disappeared. In fact, it did not, and you can tell by the circled double axis headers below. I then was able to click on one of the headers and go to the marks card to switch it to a bar chart.</p>
+<p><img src="11_Dual-Axis-1024x635.png" class="img-fluid"></p>
+<p>From here I right clicked on the axis and specified “Synchronize Axis.” What this does is take the bars in the bar chart and stops them at the centers of the doughnuts instead of going past them. <img src="12_Synchronize-Axis.png" class="img-fluid"> From here, I adjusted the size of the bars and then started formatting them as a different color. I made them much lighter and opaque so they didn’t detract from the doughnuts themselves. <img src="13_Bar-Size-1024x552.png" class="img-fluid"></p>
+<p><img src="14_Formatting-1024x464.png" class="img-fluid"></p>
+</section>
+<section id="adding-a-reference-line" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-reference-line"><strong>Adding a Reference Line</strong></h3>
+<p>The original data set talked about the recommended amount of calories that come from sugar. It’s only 5% of the day’s calories, which is clearly much less than what these actual percentages actually are across the different age groups. I decided to show this significant discrepancy in the form of a reference line.</p>
+<p><img src="15_Add-a-reference-line.png" class="img-fluid"> I right clicked on the axis and clicked on Add Reference Line. There are various settings within this to get it looking the way you want. I made mine do a dashed line and show hover text about the recommended amount of sugar. <img src="16_Add-a-reference-line.png" class="img-fluid"></p>
+</section>
+<section id="formatting" class="level3">
+<h3 class="anchored" data-anchor-id="formatting"><strong>Formatting</strong></h3>
+<p>From here, I started changing some formatting of the data to display better. I noticed that the percentages wanted to show up with several decimal places with no discernible purpose, so I set out to reformat them.</p>
+<p>I right clicked on the 2014-2016 pill within Measures to go into Default Properties&gt;Number Format. What this does is set the formatting across the board in this workbook. I could have changed the formatting in other places as well, but those seem to affect only specific instances and not affect the project “globally.”</p>
+<p><img src="17_Number-Format.png" class="img-fluid"></p>
+<p>For some reason, whatever I did initially seemed to result in percentages that were not in the correct format. So, here are the settings that resulted in the percentages with one decimal place in this case.</p>
+<p><img src="18_Number-Format.png" class="img-fluid"> From here, I got into formatting the tool tips. If you recall from my last post, the annotations and tool tips do not seem to be easily readable by default. I like to change them to read more like sentences. Here is an example of that.</p>
+<p><img src="19_Format-Tooltips-1024x512.png" class="img-fluid"></p>
+</section>
+<section id="the-result" class="level3">
+<h3 class="anchored" data-anchor-id="the-result"><strong>The Result</strong></h3>
+<p>Here is what the “final” lollipop data visualization looks like with custom shapes. The interactive version with hover tool tips is located <a href="https://public.tableau.com/profile/jisell.howe#!/vizhome/MakeoverMonday2020-Week3/SugarViz">here</a>!</p>
+<p><img src="20_Final-Viz2-1024x573.png" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2020-01-18">
+
+<title>JH - Jitterplots - An Easy Way to Make Your Insights Stand Out</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Jitterplots - An Easy Way to Make Your Insights Stand Out</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">tableau</div>
+                <div class="quarto-category">jitterplot</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">makeovermonday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 18, 2020</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Jitter plots are a great way to make data more visible for actionable insight.</p>
+<p>According to <a href="https://www.inc.com/jeff-barrett/misusing-data-could-be-costing-your-business-heres-how.html">Inc.com</a>, up to 73% of company data goes unused. Part of that comes down to actually understanding what it is, how to read it, and what can be done with it.</p>
+<p>Also, according to a <a href="http://misrc.umn.edu/workingpapers/fullpapers/1986/8611.pdf">study</a>, presentations using visuals are 43% more persuasive than ones without visuals.</p>
+<p>In addition, according to <a href="https://movableink.com/blog/29-incredible-stats-that-prove-the-power-of-visual-marketing/">MovableInk</a>, it takes only 13 milliseconds for the brain to process an image. That’s 60,000 times faster than it takes to process text.</p>
+<p>There are a ton of stats beyond these ones that state the importance of visuals. We have a big opportunity here to communicate meaningful insights visually with our BIM data and beyond in the AEC space.</p>
+<p>My goal here is to illustrate how to showcase your findings for stakeholders. One of those ways is with a jitter plot, which I’ll show how to create in a bit. But first, a bit on why you might want to create one in specific instances.</p>
+<section id="the-benefits-of-data-visualization-in-the-aec-industry" class="level3">
+<h3 class="anchored" data-anchor-id="the-benefits-of-data-visualization-in-the-aec-industry"><strong>The Benefits of Data Visualization in the AEC Industry</strong></h3>
+<p>This ties back to the first post I made about the <a href="https://jisellhowe.com/professional/the-benefits-of-data-visualization-in-the-aec-industry-pt-1/">benefits of data visualization in the AEC industry</a>. Many of the dashboards I see seem to have so much information and color all over the place. That might be great for your own use but could be overwhelming to stakeholders.</p>
+<p>Maybe there are BIM models that are opening way too slowly. Maybe there is an excessive amount of project issues in one area you want to highlight. Or maybe, you’re trying to highlight business metrics with what kind of products/projects you are quoting. CAD managers especially might have technology business cases to make on ROI that could be shown visually for buy-in purposes. The possibilities are endless.</p>
+<p>There are many techniques for “best practices” that I am learning from participating in the weekly MakeoverMonday data community exercises.</p>
+</section>
+<section id="makeovermonday-2020-week-2" class="level3">
+<h3 class="anchored" data-anchor-id="makeovermonday-2020-week-2"><strong>MakeoverMonday 2020 Week 2</strong></h3>
+<p>With that being said, the <a href="https://www.makeovermonday.co.uk/data/">MakeoverMonday</a> community is back at it again with the 2020 Week 2 data set. This data set examines the amount of pesticides that are approved in the US and not approved in other countries/regions. Again, I know it’s an unrelated data set, but the “best practice” concepts can definitely apply in multiple situations. Often times, I find inspiration from going outside of my field. That’s how I found out about MakeoverMonday in the first place.</p>
+<p>For those unfamiliar with how MakeoverMonday works, it starts out with a data set, some insight, and an original visualization. For the exercise, you are to find a data story and figure out how to improve upon visualizing it. In this way, you are constantly iterating new designs in your own work and collaborating with the community. I have learned so much so far!</p>
+</section>
+<section id="the-original-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="the-original-data-visualization"><strong>The Original Data Visualization</strong></h3>
+<p>In this case, here is what the original data visualization with the data set about banned pesticides looks like:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://ehjournal.biomedcentral.com/articles/10.1186/s12940-019-0488-0"><img src="original-makeover-Monday-viz-week2-942x1024.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Original data visualization. Source: EH Journal/Biomed Central</figcaption><p></p>
+</figure>
+</div>
+<p>Looking at the original data visualization provided, I am able to assess what improvements I’d make to my own version of this data visualization.</p>
+<p>I like the idea of trying to show amounts in each category. However, the category ranks aren’t sorted, so my eyes bounce around everywhere to see which categories are the largest. Also, I don’t like how actual countries/regions are all listed next to manually created/combined categories. Lastly, everything is the same color in this chart. What story is this trying to tell? It’s just data and color and there is nowhere specific for me to look at.</p>
+<p>Using these observations, I can then go on to create my own iteration of a visualization.</p>
+<p>Contrary to what some may believe, great data visualization isn’t just opening up the software and poking around. It takes time to prepare data, analyze data, find a story, and then plan the visualization. Most importantly, it needs to be displayed in a way that makes sense to the audience.</p>
+</section>
+<section id="working-in-tableau-public" class="level3">
+<h3 class="anchored" data-anchor-id="working-in-tableau-public"><strong>Working in Tableau Public</strong></h3>
+<p>After I did an initial sketch and observation, I then opened up <a href="https://public.tableau.com/en-us/s/">Tableau Public</a> to create my data visualization.</p>
+<p>It’s important to note that the data sets provided by the MakeoverMonday team tend to be cleaned up already. However, real life data is often messy, might have have inconsistencies, or might be incomplete.</p>
+<p>For additional context, here is a snippet of the raw data. I find it helpful to show this, so you can more easily associate the non-visual aspects with visual aspects. I’m a very visual person, so this is an area I’m working on.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Raw-Data.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Category, Lbs. Pesticides Used in USA Agriculture, and % of Total</figcaption><p></p>
+</figure>
+</div>
+<p>After connecting in the raw data in Tableau Public, I then went to the worksheet. My initial sketch showed the data in a scatter plot, so I set out to create that in Tableau.</p>
+<p><img src="ScatterPlot-1024x602.png" class="img-fluid"></p>
+<p>Here is what happens when you put the category pills on colors and details part of the marks card, the sum of pesticides pill on the columns shelf, and the sum of the percentages pill on the rows shelf.</p>
+</section>
+<section id="exploring-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-the-data"><strong>Exploring the Data</strong></h3>
+<p>From here I excluded items like “total” because it seemed redundant with all the other data there already. This helped narrow in on the story I wanted to tell. However, I started seeing that data points were still overlapping. I tried playing with shapes and size of shapes, but nothing was really making them stand alone quite yet.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Size-of-Shape-1024x553.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sizing of Shapes</figcaption><p></p>
+</figure>
+</div>
+<p>To help the situation, I learned how to create a jitter plot with a calculated field.</p>
+<p>But first: What is a jitter plot?</p>
+</section>
+<section id="jitter-plot-how-to" class="level3">
+<h3 class="anchored" data-anchor-id="jitter-plot-how-to"><strong>Jitter Plot – How To</strong></h3>
+<p>According to the <a href="https://www.dataplusscience.com/TableauJitter.html">Data + Science website</a>, a jitter is a random index value that can be associated to data points. Then, when you create something such as a dot plot, the data points won’t overlap. Data points might be assigned numbers like 0, 1, 2, 3, 4 etc. to try to separate them out.</p>
+<p>I wasn’t really aware of this before I started the week’s Makeover Monday exercise. Here is a step by step approach of how I applied my learning.</p>
+<p>I first right clicked in the white space below measures to create a calculated field.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Calculated-Field.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Creating a calculated field</figcaption><p></p>
+</figure>
+</div>
+<p>In the next window, I named the calculated field “Jitter,” so I could easily refer to it later. I then typed INDEX() in the box and clicked OK. It’s that simple!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Calculated-Field-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Calculated Field with Jitter</figcaption><p></p>
+</figure>
+</div>
+<p>From here, I placed this new calculated field onto the columns shelf. I then clicked the little flyout arrow to get into the options. I specified Compute Using &gt; Category. This assigns each category an index number to help space them out.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Jitter.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Jitter Calculated Field on Columns Shelf</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="display-options" class="level3">
+<h3 class="anchored" data-anchor-id="display-options"><strong>Display Options</strong></h3>
+<p>After this, I played around with swapping rows and columns. This is what I love about exploring ways to do data visualizations. It’s often never “perfect” the first time you do something. I like to think of it like a clay pot you’re building and forming from the ground up.</p>
+<p>Keep in mind that the following screenshots for formatting and display aren’t in a specific order.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Swap-Rows-and-Columns.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Swap Rows and Columns</figcaption><p></p>
+</figure>
+</div>
+<p>I then shifted my focus on how to highlight certain categories for the jitter plot. All the colors in the legend show up by default, which I think we are all pretty familiar with. However, with so many colors and categories, this is where the data story can get lost. For persuading action or drawing attention to insight, I want a smaller scope to focus on. I created groups for Europe, Brazil, and China. The rest would all stay gray.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Group-1024x516.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Creating Groups to color them differently</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="formatting-options" class="level3">
+<h3 class="anchored" data-anchor-id="formatting-options"><strong>Formatting Options</strong></h3>
+<p>Formatting and annotating are some of my favorite parts of doing data visualizations. It’s like the final touches to really drive the points home. Exploring these options really shows that there can be a lot of redundant and unnecessary things in visuals.</p>
+<p>It really is a case by case type thing. Highlight what you actually want and remove everything else that doesn’t aid in telling the data story. This is why I absolutely loved reading (and finally finishing) the MakeoverMonday book!</p>
+<p>Here are some things I thought as I was formatting my data visualization (in no particular order):</p>
+<ul>
+<li><p>Remove a color legend and color code names in a title instead</p></li>
+<li><p>Annotate specific percentages instead of listing them all</p></li>
+<li><p>Make use of color/lack of color to highlight what you actually want to show</p></li>
+<li><p>Hide headers and put context in hover tool tips or annotations</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Title-1024x616.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The colors within the title eliminate the need for a legend as it would then be redundant.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="annotations" class="level3">
+<h3 class="anchored" data-anchor-id="annotations"><strong>Annotations</strong></h3>
+<p>Here is often what I see when I create annotations. These items seem to show up by default. In my opinion, they don’t seem to be in easily readable language. For example, reading “<strong><em>25%</em></strong>” is a bit easier on the eyes compared to “<strong><em>% of total = 25</em></strong>.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Annotation-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Default Annotation</figcaption><p></p>
+</figure>
+</div>
+<p>Reformatting the annotation can help it be more readable while also showing pertinent information.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Annotation-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Better formatting</figcaption><p></p>
+</figure>
+</div>
+<p>There is a multitude of ways to format and finesse a data visualization before moving it onto a dashboard.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Row-grid-lines-gone.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">There are countless formatting options such as colors, removing unnecessary grid lines, removing headers, and more.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="getting-it-onto-a-dashboard-publishing" class="level3">
+<h3 class="anchored" data-anchor-id="getting-it-onto-a-dashboard-publishing"><strong>Getting it onto a Dashboard &amp; Publishing</strong></h3>
+<p>Here’s a quick tip I learned from the last time I worked on a MakeoverMonday data visualization.</p>
+<p>I used to get frustrated over the published data visualization not looking like what I intended before publishing. My understanding is that it does this because visualizations can be made to be responsive on different devices. Also, sometimes fonts aren’t supported in every browser.</p>
+<p>Specifying the dashboard as “fixed size” allows me to call out the exact size I want the visualization to be.</p>
+<p>Different situations may absolutely call for other options. I’m mainly looking for a consistent look after publishing. This little tip easily saved me 15 minutes of fighting with it and republishing it multiple times.</p>
+<p>Here is my “final” data visualization shown as a jitter plot that highlights some regions and acknowledges that combined categories exist. Here is the <a href="https://public.tableau.com/profile/jisell.howe#!/vizhome/BannedPesticides_15788686833710/PesticideBans">interactive dashboard</a>! It is best viewed on either a tablet, laptop, or desktop computer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Final-Viz.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">“Final” data visualization for Makeover Monday 2020 Week 2</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="the-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="the-takeaway"><strong>The Takeaway</strong></h3>
+<p>Creating a jitter plot is just one of the many ways to make your data and insights stand out. Much of what I show in my posts is within the free Tableau Public app. However, I do know that other tools have similar options as well.</p>
+<p>To explore this, I recently looked into creating Pivot tables in Excel as well as Microsoft Power BI. I’ve even seen these concepts apply in infographics created with Adobe Illustrator. I hope to touch base with parallels in how to accomplish the same kinds of concepts in future posts. The key takeaway is that you can provide meaningful insight for your stakeholders with various tools. Stay tuned for more posts on how I explore “best practices!”</p>
+<hr>
+<p>Sources:<br>
+Alexis, C. (2018, November 12). 29 Incredible Stats that Prove the Power of Visual Marketing. Retrieved January 18, 2020, from https://movableink.com/blog/29-incredible-stats-that-prove-the-power-of-visual-marketing/<br>
+<br>
+Barrett, J. (2018, April 12). Up to 73 Percent of Company Data Goes Unused for Analytics. Here’s How to Put It to Work. Retrieved January 18, 2020, from https://www.inc.com/jeff-barrett/misusing-data-could-be-costing-your-business-heres-how.html<br>
+<br>
+Shaffer, J. (2014, August 27). Retrieved January 18, 2020, from https://www.dataplusscience.com/TableauJitter.html<br>
+<br>
+Vogel, D. R., Dickson, G. W., &amp; Lehman, J. A. (1986, June). Retrieved January 18, 2020, from http://misrc.umn.edu/workingpapers/fullpapers/1986/8611.pdf</p>
+<p><br>
+</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2020-04-22">
+
+<title>JH - Breakfast Tableau - Multi-colored Waffle Charts and Pancakes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Breakfast Tableau - Multi-colored Waffle Charts and Pancakes</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">tableau</div>
+                <div class="quarto-category">wafflechart</div>
+                <div class="quarto-category">bubblechart</div>
+                <div class="quarto-category">actions</div>
+                <div class="quarto-category">parameters</div>
+                <div class="quarto-category">imagebackgrounds</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">makeovermonday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 22, 2020</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>I’ve learned a lot from regular data visualization practice every Sunday morning over 16 straight weeks so far. <a href="https://www.makeovermonday.co.uk/data/">MakeoverMonday</a> even has a <a href="https://www.makeovermonday.co.uk/tracker/">submissions tracker</a> that shows where every participant is at every week.</p>
+<p>I’m excited to say that apparently out of nearly a thousand participants, I am one of less than 40 people who seem to consistently participate every single week.</p>
+<p>I can tell that I learned a lot, and I’m happy to show something here that I’m really excited about accomplishing this week.</p>
+<p>Here’s a tutorial that involves the following:</p>
+<ul>
+<li><p>Waffle charts with multiple colors</p></li>
+<li><p>A third chart that changes based on two points of interaction from the viewer</p></li>
+<li><p>Calculated fields &amp; Parameters</p></li>
+<li><p>Image backgrounds, floating elements, and more on dashboards</p></li>
+</ul>
+<p>In creating my data visualization for this week, some of the items I’ll show are easier than others. Some of them involved a lot of problem solving to tweak it just right. My goal is to show the journey from start to finish.</p>
+<section id="context-on-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="context-on-the-data"><strong>Context on the Data</strong></h3>
+<p>For this week’s MakeoverMonday topic, I looked at greenhouse gas emissions and what comprises them for various food products. The supply chain activities can vary in emissions for any given product.</p>
+<p>Many might assume that simply “eating local” would impact the amount of greenhouse gas emissions the most. As we’ll see here, transportation is <em>a</em> factor but not <em>the only</em> factor.</p>
+<p>For this reason, I set out to understand more holistically what is making some products have more greenhouse gas emissions than others. I had a vision in mind for really understanding proportions, hence why I went for a waffle chart. I also had a vision to show relative size. Even though transportation might make up a good portion of a particular product’s gas emissions, the overall emissions could vary greatly compared to another product.</p>
+<p>Here’s how I did it.</p>
+</section>
+<section id="tutorial-waffles-pancakes" class="level3">
+<h3 class="anchored" data-anchor-id="tutorial-waffles-pancakes"><strong>Tutorial – Waffles &amp; Pancakes</strong></h3>
+<p>The first step in accomplishing my vision involved reusing the Waffle chart template I made a while back for another data visualization. There are also <a href="https://www.thedataschool.co.uk/wiktoria-rudz/waffle-chart-tableau/">downloadable templates</a> online for this as well.</p>
+<p>I connected that template by itself to Tableau Public.</p>
+<p><img src="1_First-Source.png" class="img-fluid"></p>
+<p>From there I poked around a bit to sort how I wanted the waffle chart to look. I placed the Column field on the columns shelf and the Row field on the rows shelf. I then sorted by descending, so then the percentages that will eventually be filled with color would fill up to the top.</p>
+<p><img src="2_Sort-Decending-on-Row-1024x551.png" class="img-fluid"></p>
+<p>After that, I went to Data&gt;New Data Source to connect in the actual data source I’ll need to represent within my waffle chart.</p>
+<p><img src="3_New-Data-Source.png" class="img-fluid"></p>
+<p><img src="4_New-Data-Source-Not-Connected-to-Tableau-Waffle-1024x576.png" class="img-fluid"></p>
+</section>
+<section id="calculated-fields-ratios" class="level3">
+<h3 class="anchored" data-anchor-id="calculated-fields-ratios"><strong>Calculated Fields – Ratios</strong></h3>
+<p>After that, I created calculated fields, very similarly to how I did waffle charts a while back. While the field itself looks a little crazy, the orange part is simply calling what the source and field it is. I happened to create these fields while clicked on the Waffle Chart Tableau data source, so this calculated field is referencing the &lt;source.field&gt; from the other data source. It is taking the emissions that happen during farming and dividing it by the number of records.</p>
+<p>I created these “ratio” calculated fields for all the different supply chain factors.</p>
+<p><strong>***</strong>(If you are following this step by step, I just want to note before you get too far that I do end up revising these ratio calculated fields in particular. Scroll down further to <strong>Updated Calculated Fields – Ratios</strong> header for the actual steps in this part. Keep reading to discover why I show it all anyways.)</p>
+<p><img src="5_Farm-Ratio-1024x513.png" class="img-fluid"></p>
+<p>Here are a couple tips I wanted to share to make calculated fields go smoother. Many times, the orange print is not something I actually type out. I type a portion of the text and then click on it. Tableau fills in the rest.</p>
+<p><img src="6_Duplicate-Tip.png" class="img-fluid"></p>
+<p>Another tip is to know which fields you’re working with. Notice there are two “number of records” fields. One actually corresponds to our second data set and the other one corresponds to the waffle chart template. Mixing them up can cause issues.</p>
+<p><img src="7_Duplicate-Tip-1024x307.png" class="img-fluid"></p>
+<p>After I created my calculated fields for ratios, I created more calculated fields for coloring the “boxes” in the waffle. Here is an example of one of them I created at first.</p>
+<p><img src="8_Troubleshooting-Number-of-Records-1024x287.png" class="img-fluid"></p>
+<p>Notice that this would only account for one color and one supply chain activity. I wanted to show all the colors. So that would be a different calculated field altogether instead. That, I will get to in the next section.</p>
+<p><strong>Here is where the problem lies.</strong> It has to do with the number of boxes colored for even just one supply chain activity.</p>
+<p>To investigate, I right clicked on the data source and selected View Data. What this did was show the raw data that is making up the data visualization. I like to do this to verify that I am indeed showing the data correctly.</p>
+<p><img src="9_Color-Box-Farm-1024x548.png" class="img-fluid"></p>
+<p><img src="10_View-Data.png" class="img-fluid"></p>
+<p><img src="11_View-Data-1024x340.png" class="img-fluid"></p>
+<p>In this case, I wasn’t showing the data properly. The value 0.80 for Farm does not mean that 80% of emissions came from farming activities. 0.80 is the amount of emissions. If I actually want a proportion, then it needs to be out of the total emissions for that product in particular. In this case, it would be out of 1.4 because it is adding together that row.</p>
+<p><img src="12_View-Data.png" class="img-fluid"></p>
+</section>
+<section id="updated-calculated-fields-ratios" class="level3">
+<h3 class="anchored" data-anchor-id="updated-calculated-fields-ratios"><strong>Updated Calculated Fields – Ratios</strong></h3>
+<p>To remedy the situation, I tried creating a new “Total Column” in a calculated field. This will add up the respective supply chain factors for any given product in the row.</p>
+<p><img src="13_Total-Column-1024x286.png" class="img-fluid"></p>
+<p>This Total Column will then go into the ratio calculated fields instead of what was there previously.</p>
+<p><img src="14_Updated-Farm-Ratio-1024x276.png" class="img-fluid"> Now the chart shows 57% colored in. Let’s check the math.</p>
+<p><img src="15_Updated-Farm-Color-Box-1024x374.png" class="img-fluid"></p>
+<p><img src="16_Verifying-Farm-Ratio-1024x311.png" class="img-fluid"></p>
+<p><img src="17_Verifying-Farm-Ratio-1024x526.png" class="img-fluid"></p>
+<p>As I saw from verifying, it looked like it was finally showing the correct proportion. I checked a few other supply chain factors in isolation just to be sure.</p>
+<p><img src="18_Land-Use-Change-Ratio-1024x495.png" class="img-fluid"></p>
+<p>Now, to create the color box for all instead of just one supply chain factor, I created a calculated field that looked like this.</p>
+<p><img src="19_Color-Box_all-1024x453.png" class="img-fluid"></p>
+<p>What this will do is tell Tableau to do different colors for different portions of the waffle chart. I dragged this calculated field to the colors on the marks card.</p>
+<p>From there I started to get a little bit into formatting on the waffle chart. Here I show some steps in getting the shapes to line up evenly and come to life.</p>
+<p><img src="20_Formatting-1024x334.png" class="img-fluid"></p>
+<p><img src="21_Formatting.png" class="img-fluid"></p>
+<p><img src="22_Formatting.png" class="img-fluid"></p>
+<p><img src="23_Formatting-Size.png" class="img-fluid"></p>
+</section>
+<section id="create-parameters-for-the-waffle-charts" class="level3">
+<h3 class="anchored" data-anchor-id="create-parameters-for-the-waffle-charts"><strong>Create Parameters for the Waffle Charts</strong></h3>
+<p>Now time for some parameters to help create “selectors” for some interactivity in the data visualization. I right clicked on the blank space in the worksheet and selected Create Parameter.</p>
+<p><img src="24_Create-Parameter.png" class="img-fluid"></p>
+<p>For this parameter, I specified that I wanted it to pull from the Food Product list. I ended up making two parameters that were pretty much identical and just called them “Food Product Selector 1” and “Food Product Selector 2.”</p>
+<p><img src="25_Create-Parameter.png" class="img-fluid"></p>
+<p>After that, I created two more calculated fields: “Food Product Show 1” and “Food Product Show 2.” Notice the orange and purple text. The orange is just a regular field in the data and the purple calls out the parameter name. <img src="26_Create-Parameter-1024x376.png" class="img-fluid"></p>
+<p>The “Food Product Show 1” calculated field was then placed on the filters card on the first waffle chart. I duplicated the waffle chart worksheet and then placed “Food Product Show 2” in the filters card instead.</p>
+<p><img src="27_Food-Product-Selector_Waffle1-1024x552.png" class="img-fluid"></p>
+<p>So now we have food product selectors that will eventually control two waffle charts. Wouldn’t it be neat if we made those selectors each control a different chart altogether as well? Well, don’t mind if I do!</p>
+<p>Here’s a bubble chart that shows total emissions for each food product. Or we can call them pancakes, just for fun. The screenshot currently shows Food Product on the filter shelf with two foods selected. But we want the interactive selectors to make those selections for us instead on the fly!</p>
+<p><img src="28_Packed-Bubble-Chart-1024x567.png" class="img-fluid"></p>
+<p>Here is a newly created calculated field that says that if the parameter selector comes up with a valid food product, then show that product. It will also do the same for the second product simultaneously. I placed this calculated field on the filters card instead of the Food Product field that was originally there.</p>
+<p><img src="29_Food-Product-Selector-for-bubble-chart-1024x244.png" class="img-fluid"></p>
+<p>At that point, I just specified that it needs to be true in order for it to work the way I wanted. That means that the parameter selectors I created must each pick out something that exists and display here.</p>
+<p><img src="30_Food-Product-Selector-1024x654.png" class="img-fluid"></p>
+</section>
+<section id="dashboard-design-for-waffles-pancakes" class="level3">
+<h3 class="anchored" data-anchor-id="dashboard-design-for-waffles-pancakes"><strong>Dashboard Design for Waffles &amp; Pancakes</strong></h3>
+<p>This data visualization really involved a lot of different things to make it work. Each individual feature would not be able to function without the others. Here is how I put it all together in the end.</p>
+<p>The snippet below shows that I started putting the two waffle charts onto the dashboard. I specified for each Food Product Selector parameter to show up in the form of a floating compact list. What this will do is create a drop down menu and let me place it wherever I want.</p>
+<p><img src="31_Dashboard-Design.png" class="img-fluid"></p>
+<p><img src="32_Dashboard-Design.png" class="img-fluid"></p>
+</section>
+<section id="actions-for-the-waffle-charts" class="level3">
+<h3 class="anchored" data-anchor-id="actions-for-the-waffle-charts"><strong>Actions for the Waffle Charts</strong></h3>
+<p>Interactivity in a data visualization is cool. It’s even cooler if you can get one chart to then affect the view of another chart at the same time. That’s what I used actions for here.</p>
+<p><img src="33_Dashboard-Design.png" class="img-fluid"></p>
+<p>In this case, I created two parameter actions. I wanted each parameter selector to be able to change the display of the waffle chart. We know this will work because we already have a calculated field filtering each waffle chart for the results.</p>
+<p>In one parameter action, I check the box for one waffle chart as a source. The other parameter action specifies the other waffle chart.</p>
+<p><img src="34_Actions-1024x551.png" class="img-fluid"></p>
+<p>The bubble chart functionality is already taken care of because of the other calculated field filtering it on its respective worksheet. That means that the viewer will select from the drop downs to make the waffle charts change. And then however the waffle charts change will affect the bubble chart. It’s sort of like a chain reaction. Pretty neat.</p>
+<p>Now onto finessing the data story we want to tell.</p>
+</section>
+<section id="data-storytelling-in-tool-tips" class="level3">
+<h3 class="anchored" data-anchor-id="data-storytelling-in-tool-tips"><strong>Data Storytelling in Tool tips</strong></h3>
+<p>As I’ve mentioned in at least a few of my tutorials, Tableau tool tip notes basically start out as a box full of generated data fields. It doesn’t help the viewer very much because it’s not written in familiar language. So I often change my tool tips to be more readable.</p>
+<p>Here is the tool tip I customized on the bubble chart worksheet. This will help us communicate why one bubble is larger than another when they are being compared.</p>
+<p><img src="35_Format-Tooltip_Bubble.png" class="img-fluid"></p>
+<p>Here is the tool tip I customized on each waffle chart. What this will show is the broken down percentages of each supply chain activity. Producing a certain food product could have a certain breakdown of factors but will result in a total amount of emissions.</p>
+<p><img src="36_Format-Tooltip_Waffle-1024x680.png" class="img-fluid"></p>
+<p>One issue I initially noticed when hovering over my waffle chart was that it was simply accumulating percentage as I moved the mouse over every circle in the waffle. We know that’s not correct, so I removed that and just included a list instead of all the “ratio” calculated fields I made earlier. This will give me percentages in the tool tip.</p>
+<p><img src="37_Format-Tooltip_Waffle.png" class="img-fluid"></p>
+<p>I took it a step further and formatted the fields to read as actual percentages instead of just decimal numbers.</p>
+</section>
+<section id="the-final-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="the-final-data-visualization"><strong>The Final Data Visualization</strong></h3>
+<p>After all of that work, here is what I ended up putting together. I added a floating background image on the dashboard from Pixabay to complete the vision I was going for. I did this via the drag and drop options in the bottom left of the dashboard view.</p>
+<p>Now the viewer can compare a food product in list one and a food product in list two. Those two selections will display two different gas emission waffle charts. And then the bubble chart will display the total emissions for each two products selected. Try it for yourself here in the <a href="https://public.tableau.com/views/MakeoverMonday2020Wk16Food/CompareGreenhouseGasEmissions?:display_count=y&amp;:origin=viz_share_link">interactive data visualization</a>! It works best viewed on a desktop or tablet.</p>
+<p>In the screenshot below, it is comparing “Beef (beef herd)” and “Berries &amp; Grapes.” Even though transportation seems to be more of a factor in the production of berries &amp; grapes, beef still has way more greenhouse emissions. We can see from the legend that this is due to the farm aspects of the supply chain. <a href="https://ourworldindata.org/food-choice-vs-eating-local">Here’s more context</a> on the why.</p>
+<p><img src="38_Final-Viz-1.png" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

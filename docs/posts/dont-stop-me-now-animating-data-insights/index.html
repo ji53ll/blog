@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2020-03-25">
+
+<title>JH - Don’t Stop Me Now - Animating Data Insights</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Don’t Stop Me Now - Animating Data Insights</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">tableau</div>
+                <div class="quarto-category">animation</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">makeovermonday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 25, 2020</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>About a month ago, Tableau fully introduced data <a href="https://twitter.com/search?q=%23VizAnimations&amp;src=typed_query">#VizAnimations</a> outside of beta in its 2020.1 release. I thought it would be really fun to try animating a data set that had changing values over time.</p>
+<p>This week’s <a href="https://www.makeovermonday.co.uk/data/">MakeoverMonday</a> challenge looked at educational offerings by Berkeley College over the last 100 years or so. What I found really interesting was that the educational courses that were taken seemed to correlate with big events and eras in history.</p>
+<p>How would one know about these trends over time?</p>
+<p>By animating the changes over time in the Berkeley data set, I am able to see exactly how everything shifted around and grew as the years pass. Often times, if we are looking at multiple static graphs, we need to study the differences. Not in this case!</p>
+<section id="context-behind-the-tutorial" class="level3">
+<h3 class="anchored" data-anchor-id="context-behind-the-tutorial"><strong>Context Behind the Tutorial</strong></h3>
+<p>Prior to coming to the conclusion of animating this data set, I was struggling a bit while brainstorming. I was trying to figure out another way to show proportions that was not a pie chart. Why not a pie chart?</p>
+<p>Well, pie charts themselves might not be too bad if there are only a few items in a proportion, but there are a lot of pieces in the original charts that make it a challenge to gather useful insights.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://uccliometric.org/course-interactive-dashboard/"><img src="1_Original-Data-Viz.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Image from interactive dashboard: UC ClioMetric History Project</figcaption><p></p>
+</figure>
+</div>
+<p>Learn how to animate your insights with Viz Animations.</p>
+</section>
+<section id="tutorial" class="level3">
+<h3 class="anchored" data-anchor-id="tutorial"><strong>Tutorial</strong></h3>
+<p>Once I opened up Tableau Public and connected the data source, I created a bit of an exploratory workbook to figure out just what is going on in this data set. Often times, you’ll find that you can’t just poke around and start visualizing things right away. You need to prep data when it’s messy and explore what is going on with it.</p>
+<p><img src="2_Explore.png" class="img-fluid"></p>
+<p>In this case, I wanted to find out how exactly these classes were organized in a hierarchy. It looked like there were names of classes, fields, an educational area, and a more broader general area. There were also other factors such as when the classes were taught, whether it was just listed or actually taken, and more.</p>
+<p>This exploration helped me see that I wanted to break these down by general areas to try to cut down on the visual complexity. Here are some default colors that popped up.</p>
+<p><img src="3_Tree-Map-1024x552.png" class="img-fluid"></p>
+<p>I happened to make mine fit more of a <a href="https://www.tableau.com/about/blog/2016/4/examining-data-viz-rules-dont-use-red-green-together-53463">colorblind friendly color scheme</a>, but either way I personally think getting down to six colors is already a win.</p>
+<p><img src="4_Colors.png" class="img-fluid"></p>
+<p>Now for the fun part. After I initially set up my dashboard with a fixed size, I went to Format&gt;Animations to turn on animations!</p>
+<p><img src="5_Animations-1024x574.png" class="img-fluid"></p>
+<p>Then, I went over to the workbook itself to drag Year to the Pages card and to the Filters card. What this will do is let me pick out which years I want in this animation. It also allows me to pick out how I want the animation to behave.</p>
+<p><img src="6_Pages.png" class="img-fluid"></p>
+<p>I ended up selecting every five years, so I could get a good idea of what happened during each decade.</p>
+<p><img src="7_Filter-Year-1024x548.png" class="img-fluid"></p>
+<p>Whatever I selected in the filters card ended up in this little drop down list. This little card lets the animation work.</p>
+<p><img src="8_Time-Chage.png" class="img-fluid"></p>
+</section>
+<section id="final-touches" class="level3">
+<h3 class="anchored" data-anchor-id="final-touches"><strong>Final Touches</strong></h3>
+<p>To add a final touch, I modified the tool tips in the workbook to read more like sentences. Here’s how that turned out.</p>
+<p><img src="9_Tool-Tip.png" class="img-fluid"></p>
+<p>Here is the final data visualization with added text on the side in the dashboard. I dragged and dropped “text” and “blank spaces” in a tiled way on the dashboard to rearrange everything to be like what I wanted. Now we’re ready to animate in the final visualization!</p>
+<p><img src="10_Final-Viz.png" class="img-fluid"></p>
+<p>Interactive dashboard available <a href="https://public.tableau.com/views/MakeoverMonday2020Wk12EducationalCoursesoverTime/DistributionOverTime?:display_count=y&amp;:origin=viz_share_link">here</a></p>
+<p>Here’s the <a href="https://www.youtube.com/embed/wBWodZ5qfJ8">animated data visualization</a>! Enjoy!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

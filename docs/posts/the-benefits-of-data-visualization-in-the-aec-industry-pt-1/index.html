@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2019-12-27">
+
+<title>JH - The Benefits of Data Visualization in the AEC Industry - Pt. 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Benefits of Data Visualization in the AEC Industry - Pt. 1</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">BIM</div>
+                <div class="quarto-category">powerbi</div>
+                <div class="quarto-category">construction</div>
+                <div class="quarto-category">manufacturing</div>
+                <div class="quarto-category">treemap</div>
+                <div class="quarto-category">career</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 27, 2019</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Data Visualization is one of my newest skills I am working on currently. Some of you may know that I recently completed a <a href="https://www.coursera.org/learn/analytics-tableau">Coursera course</a> called Data Visualization and Communication with Tableau.</p>
+<p>I did this because I found a spark of joy from mixing data analysis, creativity, and communication all into one.</p>
+<p>How does it relate to what I’m currently doing now in my career? Good question.</p>
+<p>CAD management did not inherently start out as data management and data visualization for me, but it sort of evolved into it. Why? Because there are so many files that hold a lot of data within them. Historically, I have had to open them up side by side to visually compare. Doing things like that just doesn’t cut it anymore, especially when it comes to BIM content and data management in projects. I strongly believe that “data driven” and “data informed” decisions are more important than ever.</p>
+<section id="data-visualization-at-autodesk-university" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization-at-autodesk-university"><strong>Data Visualization at Autodesk University</strong></h3>
+<p>In November 2019, I took multiple classes on getting data out of files and into Microsoft Power BI dashboards. One of my favorite examples was <a href="https://www.autodesk.com/autodesk-university/class/Navigating-Fabrication-BIM-Content-Power-BI-2019">this class</a> that showed how to create a Power BI dashboard that displayed pictures, product information, and more from an Autodesk Fabrication CADmep database. Here is <a href="http://www.darrenjyoung.com/2019/03/16/microsoft-powerbi-w-autodesk-fabrication/">more information</a> regarding how it works.</p>
+<p><img src="1_Fabrication-CADmep.webp" class="img-fluid"> Image retrieved from <a href="http://www.darrenjyoung.com/2019/03/16/microsoft-powerbi-w-autodesk-fabrication/">Darren Young</a>’s website<br>
+<a href="https://app.powerbi.com/view?r=eyJrIjoiNWIzMzc4MzgtNGQ2ZS00ZjQyLWE4M2YtZTcyZDFlNjA2MjQwIiwidCI6IjA1MzZjNmU0LTFkZDktNGI3Mi1hZTBkLTBjNWEyZmMxOGJlNCIsImMiOjN9">Live interactive dashboard</a> by Tyler Phillips</p>
+<p>With a little elbow grease, you could set up a data visualization that would provide insight all in one place. This is great for multiple audiences, especially those who do not have the design software installed but are interested from a management standpoint.</p>
+<p>Those of you who have attended Autodesk University know that the experience is basically like drinking from a fire hose with the plethora of information available. With that in mind, I took data classes like they were M&amp;Ms.</p>
+<p>I used just about any free moment I could in Las Vegas to create my own Microsoft Power BI dashboard for analyzing Fabrication CADmep content before I left. I knew it might be a while before I could get back to it at the office (and I was right).</p>
+</section>
+<section id="my-own-use-of-microsoft-power-bi" class="level3">
+<h3 class="anchored" data-anchor-id="my-own-use-of-microsoft-power-bi"><strong>My own use of Microsoft Power BI</strong></h3>
+<p>I would be remiss if I didn’t mention my own uses of Microsoft Power BI dashboards. While the nature of my work is often non-public and/or confidential to be able to show specifics, I can say that one of my most prominent uses that I think anyone can relate to is CAD and BIM content standards with naming conventions.</p>
+<p>If there is a lot of BIM content available and several attributes that were never standardized over time, then it creates a nightmare of similar yet different names. <a href="https://archsmarter.com/manage-revit-content-1/">Think like Revit parameter names, naming of families, etc.</a>Non-standardized naming conventions can make things hard to find and use in projects. And when things are hard to find, it creates potential for non-value added duplicates, rework, and otherwise <em>waste</em>.</p>
+</section>
+<section id="data-visualization-example-microsoft-power-bi-tree-map" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization-example-microsoft-power-bi-tree-map"><strong>Data Visualization Example: Microsoft Power BI Tree Map</strong></h3>
+<p>That’s where a Microsoft Power BI tree map chart comes to the rescue. Once I extracted and prepared all the data from all the Revit families, I was able to load it into Power BI.</p>
+<p>Here is an example of what that could look like in a general visual sense. I broke it down into three main sections:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="2_tree-map-example_marked-up_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Example tree map chart in Microsoft Power BI prior to applying best practices with color. Data has been anonymized.</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li><p>Larger rectangles to show that more of certain property names existed in most/all the data. Standardization likely already exists here.</p></li>
+<li><p>Slightly smaller rectangles show that there are duplicated/similar names being used. For example, “Item #” and “Item Number” might be used interchangeably in the entire BIM portfolio and could benefit from normalizing the data to just show one of those.</p></li>
+<li><p>These are considered one offs for the most part. They are usually names of things that likely only apply to a few Revit families and not much else. For example, a radiant manifold might have some other named attributes compared to a ball valve because they are totally different things. There might be some exceptions to this, of course, but for the most part I am most concerned with the second section when it comes to standards in BIM content.</p></li>
+</ol>
+<p>From here I can do a few pie charts to decide on what to do in specific instances if the goal is simply to standardize. The pie chart would show which name occurs most often as part of a proportion.</p>
+</section>
+<section id="the-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="the-takeaway"><strong>The Takeaway</strong></h3>
+<p>Sure, I could have tallied up numbers in a spreadsheet, but the tree map provided additional insight. The additional insight came from the visualization itself because it told a story. In this way I was able to use Microsoft Power BI to help make informed decisions on standardization.</p>
+<p>Keep in mind that this application is for exploration and maintenance of existing content. It could even apply if you acquire content over time across collaborative teams. If you have perfectly standardized BIM content at all times forevermore, then just scroll on :).</p>
+<hr>
+<p>Sources:<br>
+Phillips, T. (2019).&nbsp;<em>Navigating Fabrication BIM Content with PowerBi</em>. [online] Available at: https://www.linkedin.com/pulse/navigating-fabrication-bim-content-powerbi-tyler-phillips/ [Accessed 27 Dec.&nbsp;2019].<br>
+<br>
+Young, D. (2019).&nbsp;<em>Microsoft PowerBI w/Autodesk Fabrication – BIM there. Done that.</em>. [online] BIM there. Done that. Available at: http://www.darrenjyoung.com/2019/03/16/microsoft-powerbi-w-autodesk-fabrication/ [Accessed 27 Dec.&nbsp;2019].</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

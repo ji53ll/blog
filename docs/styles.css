@@ -1,0 +1,7 @@
+/* css styles */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Arvo&display=swap');
+
+h1.title {
+  font-family: "Arvo";
+  font-size: 30px;
+}
