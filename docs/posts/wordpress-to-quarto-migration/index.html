@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2022-11-14">
+
+<title>JH - WordPress to Quarto Migration</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">WordPress to Quarto Migration</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">markdown</div>
+                <div class="quarto-category">quarto</div>
+                <div class="quarto-category">personalproject</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 14, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Three years ago I made a plan to create a portfolio and blog website with a custom domain. It was late December of 2019 when jisellhowe.com was first launched on WordPress.</p>
+<p>I set up everything to make it happen as quick as possible (WordPress site, backup service, hosting service, plugins, etc.) While I felt accomplished at the time, I didn’t realize then that I would later despise all of it.</p>
+<p>Feeling overwhelmed by the WordPress editor and the guilt of maintaining (paying for) a site that I had largely avoided posting to after a while, I wondered if I would ever find a more cost effective and streamlined solution.</p>
+<p>It turns out I have, and I came across it by chance from <a href="https://www.linkedin.com/posts/nien-xiang-tou-phd-a15594184_rstats-quarto-rstudio-activity-6990615195916095489-4CA7?utm_source=share&amp;utm_medium=member_desktop">a LinkedIn post</a>.</p>
+<p>At first, I thought it was too good to be true. What is Quarto? How can it connect to GitHub? Does that really result in a website that is close to free?</p>
+<p>However, upon investigating further, I was able to migrate from WordPress and a paid hosting plan to Quarto and GitHub pages with a custom domain at a significantly lower cost.</p>
+<p>There are some key steps I took to make this a reality.</p>
+<ol type="1">
+<li><p>Set up a folder in your web browser called “Website Migration.” You’ll find it really handy in saving pertinent website links mentioned below because you may be revisiting them often.</p></li>
+<li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="rstd.io/build-quarto-blog%20-%20Let’s%20build%20a%20blog%20with%20Quarto">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to your folder you created in step 1.</p></li>
+<li><p>Exploring a method of exporting static html from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
+<ul>
+<li><p>Use <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting.</p></li>
+<li><p>Save each picture with a numbered pre-fix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
+<li><p>Remove links to other blog posts in the blog post content for now. Or, make note of them for later, so you can link them properly once the new website is up. I did this because I didn’t know the exact website links I’d have once I got it all onto GitHub.</p></li>
+</ul></li>
+<li><p>Set up a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">repository</a> on GitHub pages.</p></li>
+<li><p><a href="https://quarto.org/docs/publishing/github-pages.html">Configure</a> GitHub and the Quarto YAML file to have files go to Docs.</p></li>
+<li><p>Download/Configure <a href="https://desktop.github.com/">GitHub Desktop</a>, so it talks to the repository you created on GitHub Pages.</p></li>
+<li><p>Once all posts are migrated, render with Quarto and publish it to the basic GitHub page site you have without the custom domain yet (USERNAME.github.io).</p></li>
+<li><p>Look at the DNS settings of the custom domain at the place where you bought it. For me it was within a portal at BlueHost. Add DNS information (<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">A, AAAA, CNAME,</a> and later <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">TXT for verification</a>) to the DNS settings in the portal where you bought the domain (i.e.&nbsp;BlueHost). I did it in multiple ways so my domain with “www” in front (subdomain) and without it in front (apex domain) would both work properly.<br>
+<br>
+Here is a simplified table of the kinds of DNS records you’ll need to have with respect to the GitHub documentation.</p></li>
+</ol>
+<table class="table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 47%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">DNS Record Type</th>
+<th style="text-align: center;">Host Record</th>
+<th style="text-align: center;">Points To/Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">CNAME</td>
+<td style="text-align: center;">www</td>
+<td style="text-align: center;">USERNAME.github.io</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">@</td>
+<td style="text-align: center;">See GitHub for IP addresses to add</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AAAA</td>
+<td style="text-align: center;">@</td>
+<td style="text-align: center;">See GitHub for values to add</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TXT</td>
+<td style="text-align: center;">_github-pages-challenge-USERNAME.example.com</td>
+<td style="text-align: center;">See GitHub for Value</td>
+</tr>
+</tbody>
+</table>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make note of the DNS records referenced in the table and links above in case you need to add them again. In my case, I had to configure them twice because cancelling my hosting plan wiped out all the DNS settings for my domain. I had to watch for the DNS settings to propagate again after doing so.</p>
+</div>
+</div>
+<ol start="10" type="1">
+<li><p>Go to the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">settings</a> part of GitHub pages to add the custom domain. It should then generate the CNAME file on the GitHub side, so the two places talk to each other. Once GitHub considers it correctly configured, check the box to enforce HTTPS.</p></li>
+<li><p>Verify <a href="https://www.whatsmydns.net">DNS settings globally</a> in a variety of ways (A, AAAA, CNAME, and TXT). Once you see the correct values show up for what you set in your DNS settings earlier, the website is propagated globally. The TXT one especially showing up correctly allows for further verifying that custom domain on your GitHub account for security purposes.</p></li>
+<li><p>Cancel any hosting plan as now the custom domain is verified and cleared to work with GitHub pages. Keep the domain itself. Just cancel the hosting plan.</p></li>
+</ol>
+<p>You are now seeing the results of my Quarto blog with a custom domain that was created with RStudio and GitHub Pages! Is it perfect? No, not quite. I am still learning how to incorporate various Markdown techniques and YAML configurations to make the most of my new blogging experience.</p>
+<p>Throughout this migration process, I have learned so much on what the most critical parts are in creating a website. I can’t say I had the same experience with WordPress because there was so much automatically done on the back end that resulted in a ton of bells and whistles that I didn’t really need. WordPress certainly has its place, but it is too much for my needs at this time. In the end, this was an excellent project that resulted in a <em>significantly</em> cheaper alternative for managing a website. There is also a huge sense of accomplishment from actually figuring out how to do it.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
