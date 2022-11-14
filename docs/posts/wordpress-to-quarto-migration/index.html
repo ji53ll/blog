@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jisell Howe">
-<meta name="dcterms.date" content="2022-11-13">
+<meta name="dcterms.date" content="2022-11-14">
 
 <title>JH - WordPress to Quarto Migration</title>
 <style>
@@ -163,7 +163,7 @@ background-size: cover;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 13, 2022</p>
+        <p class="date">November 14, 2022</p>
       </div>
     </div>
       
@@ -180,21 +180,21 @@ background-size: cover;
 
 
 
-<p>Three years ago I made a plan to create a portfolio and blog website with a custom domain. It was late December of 2019 when jisellhowe.com was first launched on WordPress.</p>
+<p>Three years ago, I made a plan to create a portfolio and blog website with a custom domain. It was late December of 2019 when jisellhowe.com was first launched on WordPress.</p>
 <p>I set up everything to make it happen as quick as possible (WordPress site, backup service, hosting service, plugins, etc.) While I felt accomplished at the time, I didn’t realize then that I would later despise all of it.</p>
 <p>Feeling overwhelmed by the WordPress editor and the guilt of maintaining (paying for) a site that I had largely avoided posting to after a while, I wondered if I would ever find a more cost effective and streamlined solution.</p>
 <p>It turns out I have, and I came across it by chance from <a href="https://www.linkedin.com/posts/nien-xiang-tou-phd-a15594184_rstats-quarto-rstudio-activity-6990615195916095489-4CA7?utm_source=share&amp;utm_medium=member_desktop">a LinkedIn post</a>.</p>
-<p>At first, I thought it was too good to be true. What is Quarto? How can it connect to GitHub? Does that really result in a website that is close to free?</p>
+<p>At first, I thought it was too good to be true. What is Quarto? How can it connect to GitHub? Does that really result in a website that is close to being free to maintain?</p>
 <p>However, upon investigating further, I was able to migrate from WordPress and a paid hosting plan to Quarto and GitHub pages with a custom domain at a significantly lower cost.</p>
 <p>There are some key steps I took to make this a reality.</p>
 <ol type="1">
-<li><p>Set up a folder in your web browser called “Website Migration.” You’ll find it really handy in saving pertinent website links mentioned below because you may be revisiting them often.</p></li>
-<li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="rstd.io/build-quarto-blog%20-%20Let’s%20build%20a%20blog%20with%20Quarto">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to your folder you created in step 1.</p></li>
+<li><p>Set up a folder in a web browser called “Website Migration.” It really comes in handy in saving pertinent website links mentioned below.</p></li>
+<li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="rstd.io/build-quarto-blog%20-%20Let’s%20build%20a%20blog%20with%20Quarto">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to the folder created in Step 1.</p></li>
 <li><p>Exploring a method of exporting static html from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
 <ul>
-<li><p>Use <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting.</p></li>
+<li><p>Use <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
 <li><p>Save each picture with a numbered pre-fix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
-<li><p>Remove links to other blog posts in the blog post content for now. Or, make note of them for later, so you can link them properly once the new website is up. I did this because I didn’t know the exact website links I’d have once I got it all onto GitHub.</p></li>
+<li><p>Remove links to other blog posts in the blog post content for now. Or, make note of them for later, so they can be linked properly once the new website is up. I did this because I didn’t know the exact website links I’d have once I got it all onto GitHub.</p></li>
 </ul></li>
 <li><p>Set up a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">repository</a> on GitHub pages.</p></li>
 <li><p><a href="https://quarto.org/docs/publishing/github-pages.html">Configure</a> GitHub and the Quarto YAML file to have files go to Docs.</p></li>
