@@ -5,3 +5,7 @@ h1.title {
   font-family: "Arvo";
   font-size: 30px;
 }
+th, tr, td {
+  background-color: #D8DED2;
+  color: #0D0D0D;
+}

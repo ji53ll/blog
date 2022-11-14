@@ -251,13 +251,13 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>Make note of the DNS records referenced in the table and links above in case you need to add them again. In my case, I had to configure them twice because cancelling my hosting plan wiped out all the DNS settings for my domain, including the records I had personally added. I had to watch for the DNS settings to propagate again after doing so. Having these DNS settings exactly right will allow GitHub to recognize the custom domain properly.</p>
+</div>
+</div>
 <ol start="9" type="1">
 <li><p>Go to the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">settings</a> part of GitHub pages to add the custom domain. It should then generate the CNAME file on the GitHub side, so the two places talk to each other. Once GitHub considers it correctly configured, check the box to enforce HTTPS.</p></li>
 <li><p>Verify <a href="https://www.whatsmydns.net">DNS settings globally</a> in a variety of ways (A, AAAA, CNAME, and TXT). Once you see the correct values show up for what you set in your DNS settings earlier, the website is propagated globally. The TXT one especially showing up correctly allows for further verifying that custom domain on your GitHub account for security purposes.</p></li>
 <li><p>Cancel any hosting plan as now the custom domain is verified and cleared to work with GitHub pages. Keep the domain itself. Just cancel the hosting plan.</p></li>
 </ol>
-</div>
-</div>
 <p>You are now seeing the results of my Quarto blog with a custom domain that was created with RStudio and GitHub Pages! Is it perfect? No, not quite. I am still learning how to incorporate various Markdown techniques and YAML configurations to make the most of my new blogging experience.</p>
 <p>There are also some things that do not make this new site 100% equivalent to the old one:</p>
 <section id="no-comments-on-individual-posts-or-any-sort-of-way-to-handle-email-from-the-website." class="level3">
