@@ -192,7 +192,7 @@ background-size: cover;
 <li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="rstd.io/build-quarto-blog%20-%20Let’s%20build%20a%20blog%20with%20Quarto">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to the folder created in Step 1.</p></li>
 <li><p>Exploring a method of exporting static html from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
 <ul>
-<li><p>Use <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
+<li><p>Use the <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
 <li><p>Save each picture with a numbered pre-fix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
 <li><p>Remove links to other blog posts in the blog post content for now. Or, make note of them for later, so they can be linked properly once the new website is up. I did this because I didn’t know the exact website links I’d have once I got it all onto GitHub.</p></li>
 </ul></li>
@@ -200,15 +200,15 @@ background-size: cover;
 <li><p><a href="https://quarto.org/docs/publishing/github-pages.html">Configure</a> GitHub and the Quarto YAML file to have files go to Docs.</p></li>
 <li><p>Download/Configure <a href="https://desktop.github.com/">GitHub Desktop</a>, so it talks to the repository you created on GitHub Pages.</p></li>
 <li><p>Once all posts are migrated, render with Quarto and publish it to the basic GitHub page site you have without the custom domain yet (USERNAME.github.io).</p></li>
-<li><p>Look at the DNS settings of the custom domain at the place where you bought it. For me it was within a portal at BlueHost. Add DNS information (<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">A, AAAA, CNAME,</a> and later <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">TXT for verification</a>) to the DNS settings in the portal where you bought the domain (i.e.&nbsp;BlueHost). I did it in multiple ways so my domain with “www” in front (subdomain) and without it in front (apex domain) would both work properly.<br>
+<li><p>Look at the DNS settings of the custom domain at the place where you bought it. For me, it was within a portal at BlueHost. Add DNS information (<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">A, AAAA, CNAME,</a> and later <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">TXT for verification</a>) to the DNS settings in the portal where you bought the domain (i.e.&nbsp;BlueHost). I did it in multiple ways, so my domain with “www” in front (subdomain) and without it in front (apex domain) would both work properly.<br>
 <br>
 Here is a simplified table of the kinds of DNS records you’ll need to have with respect to the GitHub documentation.</p></li>
 </ol>
 <table class="table">
 <colgroup>
-<col style="width: 17%">
+<col style="width: 26%">
 <col style="width: 47%">
-<col style="width: 36%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -271,11 +271,11 @@ Important
 </section>
 <section id="no-seo-tools." class="level3">
 <h3 class="anchored" data-anchor-id="no-seo-tools.">No SEO tools.</h3>
-<p>This is fine because it’s a personal blog/portfolio. Even though I did see the value of the SEO plugin I had, I don’t necessarily care that much if my personal website/blog is not 100% optimized for search. That said, I can make use of the editing tools in my <a href="https://ia.net/writer">IA Writer</a> Markdown editor. It offers “Syntax Highlighting” tools to help spot weak verbs, redundancies, and more. I know that’s not the same as SEO, but since I really only plan to post blog posts and links from a social platform, I’m not all that concerned. Plus, I could deal with a little less judgment from those red, yellow, and green emojis in the Yoast SEO app anyway. If you use Yoast, you know exactly what I’m talking about.</p>
+<p>This is fine because it’s a personal blog/portfolio. Even though I did see the value of the SEO plugin I had, I don’t necessarily care that much if my personal website/blog is not 100% optimized for search. That said, I can make use of the editing tools in my <a href="https://ia.net/writer">IA Writer</a> Markdown editor. It offers “Syntax Highlighting” tools to help spot weak verbs, redundancies, and more. I know that’s not the same as SEO, but since I really only plan to post blog posts and links from a social platform, I’m not all that concerned. Plus, I could do with a little less judgment from those red, yellow, and green emojis in the Yoast SEO app anyway. If you use Yoast, you know exactly what I’m talking about.</p>
 </section>
 <section id="no-automatic-website-backup-services." class="level3">
 <h3 class="anchored" data-anchor-id="no-automatic-website-backup-services.">No automatic website backup services.</h3>
-<p>This is fine because now my rendered files are on GitHub pages. I can also easily place any of my Quarto files there or even pursue something like Dropbox etc. Also, for some reason I kept having failed backups with my WordPress site anyway. To pay a significant amount of money for something to fail and not really have time to fix it is the major reason why I scaled so far back on what I needed in a website.</p>
+<p>This is fine because now my rendered files are on GitHub pages. I can also easily place any of my Quarto files there or even pursue something like Dropbox etc. Also, for some reason, I kept having failed backups with my WordPress site anyway. To pay a significant amount of money for something to fail and not really have time to fix it is the major reason why I scaled so far back on what I needed in a website.</p>
 <p>Throughout this migration process, I have learned so much on what the most critical parts are in creating a website. I can’t say I had the same experience with WordPress because there was so much automatically done on the back end that resulted in a ton of bells and whistles that I didn’t really need. WordPress certainly has its place, but it is too much for my needs at this time. In the end, this was an excellent project that resulted in a <em>significantly</em> cheaper alternative for managing a website. There is also a huge sense of accomplishment from actually figuring out how to do it.</p>
 
 
