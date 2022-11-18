@@ -192,23 +192,23 @@ background-size: cover;
 <li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/lets-build-a-quarto-blog/">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to the folder created in Step 1.</p></li>
 <li><p>Exploring a method of exporting static html from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
 <ul>
-<li><p>Use the <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so reserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
-<li><p>Save each picture with a numbered pre-fix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
+<li><p>Use the <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my WordPress posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so preserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
+<li><p>Save each picture with a numbered prefix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
 <li><p>Remove links to other blog posts in the blog post content for now. Or, make note of them for later, so they can be linked properly once the new website is up. I did this because I didn’t know the exact website links I’d have once I got it all onto GitHub.</p></li>
 </ul></li>
 <li><p>Set up a <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">repository</a> on GitHub pages.</p></li>
 <li><p><a href="https://quarto.org/docs/publishing/github-pages.html">Configure</a> GitHub and the Quarto YAML file to have files go to Docs.</p></li>
 <li><p>Download/Configure <a href="https://desktop.github.com/">GitHub Desktop</a>, so it talks to the repository you created on GitHub Pages.</p></li>
-<li><p>Once all posts are migrated, render with Quarto and publish it to the basic GitHub page site you have without the custom domain yet (USERNAME.github.io).</p></li>
+<li><p>Once all posts are migrated, render with Quarto and publish it to the basic GitHub Pages site you have without the custom domain yet (USERNAME.github.io).</p></li>
 <li><p>Look at the DNS settings of the custom domain at the place where you bought it. For me, it was within a portal at BlueHost. Add DNS information (<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">A, AAAA, CNAME,</a> and later <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">TXT for verification</a>) to the DNS settings in the portal where you bought the domain (i.e.&nbsp;BlueHost). I did it in multiple ways, so my domain with “www” in front (subdomain) and without it in front (apex domain) would both work properly.<br>
 <br>
 Here is a simplified table of the kinds of DNS records you’ll need to have with respect to the GitHub documentation.</p></li>
 </ol>
 <table class="table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 47%">
-<col style="width: 36%">
+<col style="width: 23%">
+<col style="width: 43%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -256,7 +256,7 @@ Important
 <ol start="9" type="1">
 <li><p>Go to the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">settings</a> part of GitHub pages to add the custom domain. It should then generate the CNAME file on the GitHub side, so the two places talk to each other. Once GitHub considers it correctly configured, check the box to enforce HTTPS.</p></li>
 <li><p>Verify <a href="https://www.whatsmydns.net">DNS settings globally</a> in a variety of ways (A, AAAA, CNAME, and TXT). Once you see the correct values show up for what you set in your DNS settings earlier, the website is propagated globally. The TXT one especially showing up correctly allows for further verifying that custom domain on your GitHub account for security purposes.</p></li>
-<li><p>Cancel any hosting plan as now the custom domain is verified and cleared to work with GitHub pages. Keep the domain itself. Just cancel the hosting plan.</p></li>
+<li><p>Cancel any hosting plan as now the custom domain is verified and cleared to work with GitHub Pages. Keep the domain itself. Just cancel the hosting plan.</p></li>
 </ol>
 <p>You are now seeing the results of my Quarto blog with a custom domain that was created with RStudio and GitHub Pages! Is it perfect? No, not quite. I am still learning how to incorporate various Markdown techniques and YAML configurations to make the most of my new blogging experience.</p>
 <p>There are also some things that do not make this new site 100% equivalent to the old one:</p>
@@ -271,7 +271,7 @@ Important
 </section>
 <section id="no-seo-tools." class="level3">
 <h3 class="anchored" data-anchor-id="no-seo-tools.">No SEO tools.</h3>
-<p>This is fine because it’s a personal blog/portfolio. Even though I did see the value of the SEO plugin I had, I don’t necessarily care that much if my personal website/blog is not 100% optimized for search. That said, I can make use of the editing tools in my <a href="https://ia.net/writer">IA Writer</a> Markdown editor. It offers “Syntax Highlighting” tools to help spot weak verbs, redundancies, and more. I know that’s not the same as SEO, but since I really only plan to post blog posts and links from a social platform, I’m not all that concerned. Plus, I could do with a little less judgment from those red, yellow, and green emojis in the Yoast SEO app anyway. If you use Yoast, you know exactly what I’m talking about.</p>
+<p>This is fine because it’s a personal blog/portfolio. Even though I did see the value of the SEO plugin I had, I don’t necessarily care that much if my personal website/blog is not 100% optimized for search. That said, I can make use of the editing tools in my <a href="https://ia.net/writer">IA Writer</a> Markdown editor. IA Writer offers “Syntax Highlighting” tools to help spot weak verbs, redundancies, and more. I know that’s not the same as SEO, but since I really only plan to post blog posts and links from a social platform, I’m not all that concerned. Plus, I could do with a little less judgment from those red, yellow, and green emojis in the Yoast SEO app anyway. If you use Yoast, you know exactly what I’m talking about.</p>
 </section>
 <section id="no-automatic-website-backup-services." class="level3">
 <h3 class="anchored" data-anchor-id="no-automatic-website-backup-services.">No automatic website backup services.</h3>
