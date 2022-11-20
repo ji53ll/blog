@@ -69,6 +69,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="JH - License to Simplify - Why Less is More in Data Viz">
+<meta property="og:description" content="Ever heard the phrase “less is more”? It sounds great in theory, but it can actually be pretty hard to implement when presenting data.">
+<meta property="og:image" content="james-bond-g4758327ff_640.jpg">
+<meta property="og:site-name" content="JH">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -117,7 +121,7 @@ background-size: cover;
  </a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://data-folks.masto.host/@jisell"><i class="bi bi-mastodon" role="img">
 </i> 
  </a>
   </li>  
@@ -358,6 +362,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->

@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/how-to-verify-your-quarto-blog-on-mastodon/index.html",
       "/posts/wordpress-to-quarto-migration/index.html",
       "/posts/learning-tips-and-tricks-python/index.html",
       "/posts/picture-perfect-penguins-dynamic-tableau-shapes/index.html",

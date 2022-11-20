@@ -69,6 +69,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="JH - WordPress to Quarto Migration">
+<meta property="og:description" content="Three years ago, I made a plan to create a portfolio and blog website with a custom domain. It was late December of 2019 when jisellhowe.com was first launched on WordPress.">
+<meta property="og:image" content="birds-g3d3b063d1_640.jpg">
+<meta property="og:site-name" content="JH">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -117,7 +121,7 @@ background-size: cover;
  </a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://data-folks.masto.host/@jisell"><i class="bi bi-mastodon" role="img">
 </i> 
  </a>
   </li>  
@@ -190,7 +194,7 @@ background-size: cover;
 <ol type="1">
 <li><p>Set up a folder in a web browser called “Website Migration.” It really comes in handy in saving pertinent website links mentioned below.</p></li>
 <li><p>Review a <a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;t=2437s">webinar</a> and corresponding <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/lets-build-a-quarto-blog/">presentation</a> on how to get started with <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>. Save these links to the folder created in Step 1.</p></li>
-<li><p>Exploring a method of exporting static html from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
+<li><p>Exploring a method of exporting static HTML from my WordPress site seemed to be a bit of a dead end. What I ended up doing to migrate all my existing posts was the following:</p>
 <ul>
 <li><p>Use the <a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/workflow/create-new-post/">workflow</a> of creating a Quarto blog post and then copy/paste all the text from the “preview” of my WordPress posts into <a href="https://posit.co/download/rstudio-desktop/?aktime=1572632778">RStudio</a>. Doing so preserves all or most of the formatting. I did this for each post. Yes, it did take a little while.</p></li>
 <li><p>Save each picture with a numbered prefix in the same folder as the post. I put references to myself in my post text (i.e.&nbsp;“IMG1”), so I knew where to put my images.</p></li>
@@ -206,9 +210,9 @@ Here is a simplified table of the kinds of DNS records you’ll need to have wit
 </ol>
 <table class="table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 47%">
-<col style="width: 36%">
+<col style="width: 25%">
+<col style="width: 43%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -378,6 +382,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->

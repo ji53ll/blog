@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jisell Howe">
+<meta name="dcterms.date" content="2022-11-20">
+
+<title>JH - How to Verify your Quarto Blog on Mastodon</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background-image: url(../banner-moody.jpg);
+background-size: cover;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="JH - How to Verify your Quarto Blog on Mastodon">
+<meta property="og:description" content="I first signed up for a Mastodon social account a few weeks ago to more closely follow the data science community.">
+<meta property="og:image" content="checklist-g2e55030c6_640.jpg">
+<meta property="og:site-name" content="JH">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">JH</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html">Résumé</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../featured.html">Industry Features</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../speakertradingcards.html">Speaker Trading Cards</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/jisell.howe#!/">Data Viz (Tableau Public)</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/jisellhowe"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ji53ll"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://data-folks.masto.host/@jisell"><i class="bi bi-mastodon" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ji5ell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@jisellhowe"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How to Verify your Quarto Blog on Mastodon</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">html</div>
+                <div class="quarto-category">mastodon</div>
+                <div class="quarto-category">quarto</div>
+                <div class="quarto-category">personalproject</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jisell Howe </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 20, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>I first signed up for a <a href="https://data-folks.masto.host/@jisell">Mastodon social account</a> a few weeks ago to more closely follow the data science community. So far, I am really enjoying the highly curated (ad free) feeds that focus on the topics I care to learn about. I noticed there was a feature within Mastodon that could verify links such as your website, so others could see that the same person is controlling both an individual Mastodon account and a particular linked blog website. It results in a fancy green check mark next to a website you list in your profile, and it doesn’t cost any money to do so.</p>
+<section id="verification" class="level2">
+<h2 class="anchored" data-anchor-id="verification">Verification</h2>
+<p>At the time of this writing, the <a href="https://docs.joinmastodon.org/user/profile">Mastodon documentation</a> has this to say about verification:</p>
+<blockquote class="blockquote">
+<p><em>Document-based verification and blue ticks are not possible without a central authority. However, Mastodon can cross-reference the links you put on your profile to prove that you are the real owner of those links.</em></p>
+</blockquote>
+<p>Verifying your website with Mastodon involves adding what I understand to be a <a href="https://microformats.org/wiki/rel-me">microformat</a> attribute called <code>rel="me"</code> to the HTML in the back end, so Mastodon can cross-reference and verify that the two are connected.</p>
+</section>
+<section id="the-old-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-old-challenge">The Old Challenge</h2>
+<p>While some tutorials I found on this topic talked about doing this for a WordPress site, I didn’t find them immediately applicable as I recently <a href="https://www.jisellhowe.com/posts/wordpress-to-quarto-migration/">transitioned away</a> from having a WordPress site.</p>
+<p>A big reason why I transitioned from having a WordPress site was that it involved so many (overwhelming) bells and whistles, and I think it actually hindered my learning process of building/maintaining a website. The powerful tool quickly surpassed the pace that I was going in learning the ins and outs of it. If I still had my WordPress site, I probably would have tried copying/pasting the example HTML provided verbatim somewhere, which at best probably would have had some random link with text show up separately from all my other social links. It’s not a very clean look.</p>
+</section>
+<section id="the-new-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-new-challenge">The New Challenge</h2>
+<p>Transitioning to a Quarto blog/site allowed me to build the most critical aspects of a website and closely study what each file did along the way. Adding some HTML for Mastodon verification seemed like the perfect challenge for me to understand applications of HTML a bit more beyond the basic syntax I understood already.</p>
+<p>Given that my main “interface” for creating website pages is now not a complex online “editor” but the rather lean and mean RStudio, I will fill you in on my thought process and path to verifying a Quarto website with Mastodon in a very clean way.</p>
+</section>
+<section id="thought-process-and-method" class="level2">
+<h2 class="anchored" data-anchor-id="thought-process-and-method">Thought Process and Method</h2>
+<p>My now current workflow for creating blog posts and pages for my Quarto blog/site involves creating .qmd files, telling Quarto to render everything, copying the entire “docs” output folder to my GitHub Desktop location, and deploying the “docs” folder to GitHub pages. By the way, this workflow is explained further with linked documentation in my previous <a href="https://www.jisellhowe.com/posts/wordpress-to-quarto-migration/">blog post</a> in case you are interested in doing the same.</p>
+<p>When you set up a Quarto site, you will by default generate several files including an <em>about.qmd</em> file that can later be renamed to an <em>index.qmd</em> file. This is just one of the files that offers a place to add navigation links to other pages and social links. The file below will render to <em>index.html</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/lets-build-a-quarto-blog/#about.qmd-blog-about-page"><img src="About_Links.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Image of the frontmatter of the index.qmd file from Quarto documentation</figcaption><p></p>
+</figure>
+</div>
+<p>To incorporate what was needed to verify my website with my Mastodon account, the additional <code>rel="me"</code> syntax ultimately needed to end up in the rendered <em>index.html</em> file of my website.</p>
+<p>To do so, I did the following:</p>
+<section id="go-to-edit-profile-in-mastodon" class="level3">
+<h3 class="anchored" data-anchor-id="go-to-edit-profile-in-mastodon">1. Go to Edit Profile in Mastodon</h3>
+<p>I went to the Edit Profile area of my Mastodon account where I could add up to four links. Next to those four links is a special HTML syntax with instructions to add <code>rel="me"</code> next to the Mastodon profile link within the HTML of the website I wanted to verify.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Mastodon_Verification1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image from Mastodon&gt;Edit Profile</figcaption><p></p>
+</figure>
+</div>
+<p>An example of this is below:</p>
+<p><code>&lt;a rel="me" href="https://MASTODONINSTANCE/@USERNAME"&gt;Mastodon&lt;/a&gt;</code></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The critical parts are the <code>rel="me"</code> and the link to your Mastodon profile page. The display text <code>Mastodon</code> isn’t necessary. Also, the <code>rel="me"</code> attribute can also show up after the link as opposed to before it as an option.</p>
+</div>
+</div>
+</section>
+<section id="add-the-relme-attribute" class="level3">
+<h3 class="anchored" data-anchor-id="add-the-relme-attribute">2. Add the <code>rel="me"</code> Attribute</h3>
+<p>I located my rendered <em>index.html</em> file to add the <code>rel="me"</code> part next to the Mastodon social link within the HTML. In my posting workflow, that file is located in my “docs” folder. What this does is let Quarto continue to render the buttons and text exactly as intended, and there is no extra text talking about “verification” anywhere.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social_Links.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Link buttons that can render with Quarto</figcaption><p></p>
+</figure>
+</div>
+<p>While that does indeed work for verification purposes in further steps below with Mastodon, perhaps a better route to further explore is adding the <code>rel="me"</code> attribute next to the Mastodon link and other social links in the <em>index.qmd</em> file itself with <a href="https://quarto.org/docs/authoring/markdown-basics.html">customized HTML</a>. This will ensure it sticks every time <em>index.html</em> is rendered going forward.</p>
+<p>Here is one basic <a href="https://www.freecodecamp.org/news/html-button-link-code-examples-how-to-make-html-hyperlinks-using-the-href-attribute-on-tags/">example</a> of creating a similar button link that takes on the same styling as the rest of the Quarto website:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;form</span> <span class="er">action</span><span class="ot">=</span><span class="st">"https://MASTODONINSTANCE/@USERNAME"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"me"</span><span class="kw">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">"submit"</span><span class="kw">&gt;</span>Mastodon<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/form&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And here is the result:</p>
+<form action="https://data-folks.masto.host/@jisell" rel="me">
+  <button type="submit">Mastodon</button>
+</form>
+<hr>
+<p>Once the link and <code>rel="me"</code> attribute were added to the <em>index.qmd</em> file, I rendered it.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s important to verify that the <code>rel="me"</code> attribute has been added to the <em>index.html</em> file once rendered. You can do this by right clicking and inspecting the page.</p>
+</div>
+</div>
+</section>
+<section id="deploy-onto-github-pages" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-onto-github-pages">3. Deploy onto GitHub Pages</h3>
+<p>Once I rendered the files, I deployed them all onto GitHub Pages. After a few minutes, I was able to inspect the contents of my website on the front end to see that the <code>rel="me"</code> was reflected next to the Mastodon social link. With that done, Mastodon recognized the website link as “verified,” and a green check mark appeared next to it in my profile.</p>
+<p><img src="Mastodon%20Verification_Final.png" class="img-fluid"></p>
+</section>
+<section id="bonus-verification---github-account" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-verification---github-account">Bonus Verification - GitHub Account</h3>
+<p>Your personal website isn’t the only site that can be verified with Mastodon. I recently learned of a way to verify my actual GitHub account as well. This <a href="https://til.simonwillison.net/mastodon/verifying-github-on-mastodon">post</a> that I happened to come across on Mastodon gets into details on setting up a repository that has one HTML file that redirects to your GitHub profile page. Within that HTML file, you add the <code>rel="me"</code> syntax as well. This makes it so Mastodon will verify your GitHub account with another green check mark.</p>
+<p>I followed the workflow myself from the post and saw it working very well. My only edit is that I only included enough HTML syntax for the noted essential items in that post because I want to be more intentional with my learning experience. Copying/pasting entire snippets without understanding fully what they do can make it more of a challenge to apply learning and connect the dots.</p>
+<p>Going through this exercise in verifying my website and GitHub account was a great learning experience. I am looking forward to more interesting challenges.</p>
+<hr>
+<p><em>Sources Cited</em></p>
+<p><em>How to add a rel attribute to all links in WordPress</em>. SupportHost. (2022, November 10). Retrieved November 19, 2022, from https://supporthost.com/rel-attribute/</p>
+<p><em>Let’s build a blog with quarto</em>. quarto. (n.d.). Retrieved November 19, 2022, from https://ivelasq.quarto.pub/building-a-blog-with-quarto/lets-build-a-quarto-blog/#about.qmd-blog-about-page</p>
+<p><em>Quarto - Markdown Basics</em>. Caption. (n.d.). Retrieved November 20, 2022, from https://quarto.org/docs/authoring/markdown-basics.html</p>
+<p><em>REL=“Me”</em>. rel=“me” - Microformats Wiki. (n.d.). Retrieved November 19, 2022, from https://microformats.org/wiki/rel-me</p>
+<p><em>Setting up your profile</em>. Mastodon. (n.d.). Retrieved November 19, 2022, from https://docs.joinmastodon.org/user/profile</p>
+<p>Wilkins, J. (2021, April 28). <em>HTML button link code examples – how to make HTML hyperlinks using the HREF attribute on tags</em>. freeCodeCamp.org. Retrieved November 20, 2022, from https://www.freecodecamp.org/news/html-button-link-code-examples-how-to-make-html-hyperlinks-using-the-href-attribute-on-tags/</p>
+<p>Willison, S. (n.d.). <em>Verifying your github profile on Mastodon</em>. Simon Willison’s TILs. Retrieved November 19, 2022, from https://til.simonwillison.net/mastodon/verifying-github-on-mastodon</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

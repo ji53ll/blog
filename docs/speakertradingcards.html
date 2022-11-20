@@ -61,6 +61,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="JH - Speaker Trading Cards">
+<meta property="og:description" content="In November 2018, I got to thinking about standard business cards and how they really don’t put a name to a face. In my opinion, they are “okay,” but they don’t tell the whole story.">
+<meta property="og:site-name" content="JH">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -109,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
  </a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://data-folks.masto.host/web/@jisell#"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://data-folks.masto.host/@jisell"><i class="bi bi-mastodon" role="img">
 </i> 
  </a>
   </li>  
@@ -288,6 +291,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
