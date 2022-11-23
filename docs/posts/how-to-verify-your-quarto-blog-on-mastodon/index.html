@@ -269,7 +269,7 @@ background-size: cover;
 </section>
 <section id="thought-process-and-method" class="level2">
 <h2 class="anchored" data-anchor-id="thought-process-and-method">Thought Process and Method</h2>
-<p>My now current workflow for creating blog posts and pages for my Quarto blog/site involves creating .qmd files, telling Quarto to render everything, copying the entire “docs” output folder to my GitHub Desktop location, and deploying the “docs” folder to GitHub pages. By the way, this workflow is explained further with linked documentation in my previous <a href="https://www.jisellhowe.com/posts/wordpress-to-quarto-migration/">blog post</a> in case you are interested in doing the same.</p>
+<p>My now current workflow for creating blog posts and pages for my Quarto blog/site involves creating .qmd files, telling Quarto to render everything, copying the entire “docs” output folder to my GitHub Desktop location, and deploying the “docs” folder to GitHub Pages. By the way, this workflow is explained further with linked documentation in my previous <a href="https://www.jisellhowe.com/posts/wordpress-to-quarto-migration/">blog post</a> in case you are interested in doing the same.</p>
 <p>When you set up a Quarto site, you will by default generate several files including an <em>about.qmd</em> file that can later be renamed to an <em>index.qmd</em> file. This is just one of the files that offers a place to add navigation links to other pages and social links. The file below will render to <em>index.html</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -277,7 +277,7 @@ background-size: cover;
 <p></p><figcaption class="figure-caption">Image of the frontmatter of the index.qmd file from Quarto documentation</figcaption><p></p>
 </figure>
 </div>
-<p>To incorporate what was needed to verify my website with my Mastodon account, the additional <code>rel="me"</code> syntax ultimately needed to end up in the rendered <em>index.html</em> file of my website.</p>
+<p>To incorporate what is needed to verify my website with my Mastodon account, the additional <code>rel="me"</code> syntax ultimately needed to end up in the rendered <em>index.html</em> file of my website.</p>
 <p>To do so, I did the following:</p>
 <section id="go-to-edit-profile-in-mastodon" class="level3">
 <h3 class="anchored" data-anchor-id="go-to-edit-profile-in-mastodon">1. Go to Edit Profile in Mastodon</h3>
@@ -310,7 +310,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Social_Links.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Link buttons that can render with Quarto</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Image of link buttons that can render with Quarto</figcaption><p></p>
 </figure>
 </div>
 <p>While that does indeed work for verification purposes in further steps below with Mastodon, perhaps a better route to further explore is adding the <code>rel="me"</code> attribute next to the Mastodon link and other social links in the <em>index.qmd</em> file itself with <a href="https://quarto.org/docs/authoring/markdown-basics.html">customized HTML</a>. This will ensure it sticks every time <em>index.html</em> is rendered going forward, and it offers an opportunity to learn how to style it nicely.</p>
@@ -318,7 +318,7 @@ Note
 <div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;form</span> <span class="er">action</span><span class="ot">=</span><span class="st">"https://MASTODONINSTANCE/@USERNAME"</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"me"</span><span class="kw">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;button</span> <span class="er">type</span><span class="ot">=</span><span class="st">"submit"</span><span class="kw">&gt;</span>Mastodon<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/form&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And here is the result:</p>
+<p>And here is the functioning result (not a screenshot):</p>
 <form action="https://data-folks.masto.host/@jisell" rel="me">
   <button type="submit">Mastodon</button>
 </form>
