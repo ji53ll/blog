@@ -255,7 +255,7 @@ background-size: cover;
 <section id="data-source" class="level2">
 <h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
 <p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the excel reports that are typically available include a span of a few months at any given time.</p>
-<p>For the Posit Table Contest, I merged three different data sets so I could get an entire year’s worth of data. All data sets were brought into my code via URL links as opposed to static files.</p>
+<p>For the Posit Table Contest, I merged three different data sets, so I could get an entire year’s worth of data. All data sets were brought into my code via URL links as opposed to static files.</p>
 <p>Here is how I imported the data sets and prepped them for use.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
@@ -268,47 +268,55 @@ background-size: cover;
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># import data - June 2022 - Oct 2022</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> url1 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df1) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>,<span class="st">"Aug_2022"</span>,<span class="st">"Jul_2022"</span>,<span class="st">"Jun_2022"</span>,<span class="st">"Oct_2021"</span>,<span class="st">"Ref_Sep_2022"</span>, <span class="st">"Ref_Oct_2021"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202209.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> url1 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">select</span>(df1, Type_of_Construction, Jun_2022, Jul_2022, Aug_2022, Sep_2022, Oct_2022, Oct_2021, Ref_Sep_2022, Ref_Oct_2021)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df1) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>,<span class="st">"Aug_2022"</span>,<span class="st">"Jul_2022"</span>,<span class="st">"Jun_2022"</span>,<span class="st">"Oct_2021"</span>,<span class="st">"Ref_Sep_2022"</span>, <span class="st">"Ref_Oct_2021"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">select</span>(df1, Type_of_Construction, Jun_2022, Jul_2022, Aug_2022, Sep_2022, Oct_2022, Oct_2021, Ref_Sep_2022, Ref_Oct_2021)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Jan 2022 - May 2022 data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> url2 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df2) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction1"</span>,<span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>,<span class="st">"Mar_2022"</span>,<span class="st">"Feb_2022"</span>,<span class="st">"Jan_2022"</span>,<span class="st">"May_2021"</span>,<span class="st">"Ref_April_2022"</span>, <span class="st">"Ref_May_2021"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting specific data (not June as it's already captured in df1)</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">select</span>(df2, Type_of_Construction1, Jan_2022, Feb_2022, Mar_2022, Apr_2022, May_2022)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202205.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> url2 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df2) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction1"</span>,<span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>,<span class="st">"Mar_2022"</span>,<span class="st">"Feb_2022"</span>,<span class="st">"Jan_2022"</span>,<span class="st">"May_2021"</span>,<span class="st">"Ref_April_2022"</span>, <span class="st">"Ref_May_2021"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting specific data (not June as it's already captured in df1)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">select</span>(df2, Type_of_Construction1, Jan_2022, Feb_2022, Mar_2022, Apr_2022, May_2022)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nov 2021 - Dec 2021 data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>url3 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> url3 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202201.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>url3 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df3) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction2"</span>,<span class="st">"Jan_2022"</span>,<span class="st">"Dec_2021"</span>,<span class="st">"Nov_2021"</span>,<span class="st">"Oct_2021"</span>,<span class="st">"Sep_2021"</span>,<span class="st">"Jan_2021"</span>,<span class="st">"Ref_Dec_2021"</span>, <span class="st">"Ref_Jan_2021"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> url3 <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting specific data (not Oct as it's already captured in df1)</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">select</span>(df3, Type_of_Construction2, Nov_2021, Dec_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># defining column names using vector</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df3) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Type_of_Construction2"</span>,<span class="st">"Jan_2022"</span>,<span class="st">"Dec_2021"</span>,<span class="st">"Nov_2021"</span>,<span class="st">"Oct_2021"</span>,<span class="st">"Sep_2021"</span>,<span class="st">"Jan_2021"</span>,<span class="st">"Ref_Dec_2021"</span>, <span class="st">"Ref_Jan_2021"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#selecting specific data (not Oct as it's already captured in df1)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">select</span>(df3, Type_of_Construction2, Nov_2021, Dec_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -357,7 +365,7 @@ Important
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trend =</span> <span class="fu">list</span>(<span class="fu">c_across</span>(<span class="sc">-</span><span class="fu">one_of</span>(<span class="st">"Type_of_Construction"</span>, <span class="st">"Ref_Sep_2022"</span>, <span class="st">"Ref_Oct_2021"</span>)))) <span class="sc">%&gt;%</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Type_of_Construction, Oct_2022, Oct_2021, Ref_Sep_2022, Ref_Oct_2021, trend)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>One of my last big considerations in the table design ws all about color. I wanted to be mindful of color with respect to those who may experience forms of color blindness, so I went to <a href="https://color.adobe.com/create/color-wheel">Adobe Color</a> for all of my color palette work. I then applied those colors to specific situations. In this case, I made all the negative percentages show up as a light red to contrast with the positive percentages that were light blue.</p>
+<p>One of my last big considerations in the table design was all about color. I wanted to be mindful of color with respect to those who may experience forms of color blindness, so I went to <a href="https://color.adobe.com/create/color-wheel">Adobe Color</a> for all of my color palette work. I then applied those colors to specific situations. In this case, I made all the negative percentages show up as a light red to contrast with the positive percentages that were light blue.</p>
 <p>Here is the full code that produces one table for All Construction. The other two are similar.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table - All Construction</span></span>
@@ -512,6 +520,7 @@ Important
 <p><a href="https://github.com/ji53ll/Posit-2022-Table-Contest"><img src="Public%20Sector%20Construction.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
+<p>Alternatively, the <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub repository</a> includes the static html file for viewing the entire entry all at once. It includes the tables created with R and a series of line charts produced in Python.</p>
 </section>
 <section id="line-charts-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="line-charts-with-python">Line Charts with Python</h2>
@@ -529,38 +538,41 @@ Important
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read data June 2022 - Oct 2022</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df_1.iloc[ : , :<span class="dv">7</span>]</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>newcolumns1 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>, <span class="st">"Aug_2022"</span>, <span class="st">"Jul_2022"</span>, <span class="st">"Jun_2022"</span>, <span class="st">"Oct_2021"</span>]</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_1.columns <span class="op">=</span> newcolumns1</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> df_1.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="bu">list</span>(df_1.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>x1.reverse()</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Jan 2022 - May 2022</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202209.xlsx', skiprows=4) #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df_1.iloc[ : , :<span class="dv">7</span>]</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>newcolumns1 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>, <span class="st">"Aug_2022"</span>, <span class="st">"Jul_2022"</span>, <span class="st">"Jun_2022"</span>, <span class="st">"Oct_2021"</span>]</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>df_1.columns <span class="op">=</span> newcolumns1</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> df_1.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="bu">list</span>(df_1.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>x1.reverse()</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Jan 2022 - May 2022</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
 <span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
