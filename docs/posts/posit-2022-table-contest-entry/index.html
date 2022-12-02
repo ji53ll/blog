@@ -252,11 +252,11 @@ background-size: cover;
 
 <p>I recently came across the <a href="https://resources.rstudio.com/blog/rstudio-table-contest-2022/">Posit 2022 Table Contest</a> and decided to participate for the first time. I am relatively newer to R but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub,</a> and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.</p>
 <p>For my entry type, I will walk through the high-level considerations I had in creating tables in R and line charts in Python. My data topic of choice is <a href="https://www.census.gov/construction/c30/c30index.html">Construction Spending in the U.S</a> as it is relevant to the industry I work in.</p>
-<section id="data-source" class="level2">
-<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<section id="data-source-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="data-source-considerations">Data Source Considerations</h2>
 <p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the excel reports that are typically available include a span of only a few months at any given time.</p>
 <p>For the Posit Table Contest, I merged three different data sets, so I could get an entire year’s worth of data. All data sets were brought into my code via URL links as opposed to static files.</p>
-<p>Here is how I imported the data sets and prepped them for use. Ultimately, I grabbed seasonally adjusted data from the first tab of three data sources (most recent, and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
+<p>Here is how I imported the data sets and prepped them for use. Ultimately, I grabbed seasonally adjusted data from the first tab of three data sources (most recent and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
@@ -332,9 +332,9 @@ Important
 </div>
 </div>
 </section>
-<section id="merging-data" class="level2">
-<h2 class="anchored" data-anchor-id="merging-data">Merging Data</h2>
-<p>After selecting and ordering the columns for the three separate data sets, I merged them together into one data set. Here is how I did that. I did it like this as opposed to any other way because the formatting and structure was the same in each data set. Simply placing them side by side and then selecting the exact columns I wanted created the master data frame in the correct order (oldest to newest time series).</p>
+<section id="combining-data" class="level2">
+<h2 class="anchored" data-anchor-id="combining-data">Combining Data</h2>
+<p>After selecting and ordering the columns for the three separate data sets, I combined them into one data set. I did it like this as opposed to any other way because the formatting and structure was the same in each data set. Simply placing them side by side and then selecting the exact columns I wanted created the master data frame in the correct order (oldest to newest time series).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># merge all dataframes</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df1, df2, df3)</span>
@@ -342,8 +342,8 @@ Important
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">select</span>(df,Type_of_Construction, Oct_2021, Nov_2021, Dec_2021, Jan_2022, Feb_2022, Mar_2022, Apr_2022, May_2022, Jun_2022, Jul_2022, Aug_2022, Sep_2022, Oct_2022, Ref_Sep_2022, Ref_Oct_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="segmenting-data" class="level2">
-<h2 class="anchored" data-anchor-id="segmenting-data">Segmenting Data</h2>
+<section id="segmenting-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="segmenting-the-data">Segmenting the Data</h2>
 <p>Another special consideration in creating these tables involved dealing with multiple overall categories of construction types in the same table. I segmented the master data frame into three main segment data frames to represent “Total Construction”,“Private Sector”, and “Public Sector.” These three data frames were then used to create three tables for the Posit Table Contest.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># segments dataframes by construction category</span></span>
@@ -355,8 +355,8 @@ Important
 <section id="table-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="table-considerations">Table Considerations</h2>
 <p>I explored gt, gtExtras, and other packages to ultimately create the tables.</p>
-<p>My current understanding that the syntax for these tables sort of works like opaque paint in that different layers are applied in a certain order to get a certain effect. A specific example of this is where I applied special formatting on the “overall summary” categories such as “Nonresidential”, “Residential”, and anything with “Total” in the name to differentiate them a bit from the sub-categories. I have the <code>gt_highlight_cols</code> part before the <code>gt_highlight_rows</code>, which results in a lighter color for the “overall summary categories” and a slightly darker color for the sub-categories.</p>
-<p>The sparklines were particularly a challenge to create because these data sets have multiple columns of data over time per construction type, and I wanted each sparkline to look like like time series charts.</p>
+<p>My current understanding is that the syntax for these tables sort of works like opaque paint in that different layers are applied in a certain order to get a certain effect. A specific example of this is where I applied special formatting on the “overall summary” categories such as “Nonresidential”, “Residential”, and anything with “Total” in the name to differentiate them a bit from the sub-categories. I have the <code>gt_highlight_cols</code> part before the <code>gt_highlight_rows</code> part, which results in a lighter color for the “overall summary categories” and a slightly darker color for the sub-categories.</p>
+<p>The sparklines were particularly a challenge to create because these data sets have multiple columns of data over time per construction type, and I wanted each sparkline to look like time series charts.</p>
 <p>What ultimately helped me accomplish that was this part of the code where it “mutated” the columns to be read like rows with the exception of a few columns.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>final_df_all <span class="ot">&lt;-</span> </span>
@@ -525,7 +525,7 @@ Important
 <section id="line-charts-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="line-charts-with-python">Line Charts with Python</h2>
 <p>Beyond the three tables I created with R, I wanted to take it a bit further with visualizing the time series data, this time with Python as I am a little more familiar with it.</p>
-<p>In much the same way, I brought in the three data sets again, cleaned them up, re-ordered them, merged them, and created a master data frame that was segmented per overall category. The same considerations with the data sources apply here too. Because these are actual links to data as opposed to static, the tables will update on a regular basis and we need to be mindful of what those changes mean in updating any “static” elements.</p>
+<p>In much the same way, I brought in the three data sets again, cleaned them up, re-ordered them, combined them, and created a master data frame that was segmented per overall category. The same considerations with the data sources apply here too. Because these are actual links to data as opposed to static, the tables will update on a regular basis and we need to be mindful of what those changes mean in updating any “static” elements.</p>
 <p>For these line charts, I used pandas to bring in the data and matplotlib for the display.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -658,7 +658,7 @@ Important
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>lw2<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>ax1.plot(x, y5, marker=(marker(y5)), lw=lw, color=(colorizer(y5)))</code></p>
-<p>From there, I adjusted the xticks, yticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the charts and ultimately went with a larger chart showing All Construction and then a split amount of space for Private and Public Sector. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
+<p>From there, I adjusted the xticks, yticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the charts because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I ultimately went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the changes I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
 <p>Here is the final result of the charts. These annotations would be examples of items that would likely need to be updated if you refresh the code and data beyond the date of this publishing.</p>
 <p><img src="unnamed-chunk-16-1.png" class="img-fluid"></p>
 <p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to Python and now R. R is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both R and Python for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
