@@ -144,7 +144,7 @@
     "href": "posts/posit-2022-table-contest-entry/index.html",
     "title": "Posit 2022 Table Contest Entry: Construction Spending",
     "section": "",
-    "text": "I recently came across the Posit 2022 Table Contest and decided to participate for the first time. I am relatively newer to R but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on GitHub, and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.\nFor my entry type, I will walk through the high-level considerations I had in creating tables in R and line charts in Python. My data topic of choice is Construction Spending in the U.S as it is relevant to the industry I work in."
+    "text": "I recently came across the Posit 2022 Table Contest and decided to participate for the first time. I am relatively newer to R but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on GitHub, and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.\nFor my entry type, I will walk through the high-level considerations I had in creating tables in R and line charts in Python. My data topic of choice is Construction Spending in the U.S. as it is relevant to the industry I work in."
   },
   {
     "objectID": "posts/posit-2022-table-contest-entry/index.html#data-source-considerations",
