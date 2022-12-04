@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/exploring-everyday-possibilities-in-markdown/index.html",
       "/posts/posit-2022-table-contest-entry/index.html",
       "/posts/how-to-verify-your-quarto-blog-on-mastodon/index.html",
       "/posts/wordpress-to-quarto-migration/index.html",
