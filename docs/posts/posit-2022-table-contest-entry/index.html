@@ -268,7 +268,7 @@ background-size: cover;
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># import data - June 2022 - Oct 2022</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'release.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'release.xlsx' #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -288,7 +288,7 @@ background-size: cover;
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202205.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202205.xlsx' #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
@@ -305,7 +305,7 @@ background-size: cover;
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202201.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202201.xlsx' #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>url3 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -553,44 +553,43 @@ Important
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read data June 2022 - Oct 2022</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('release.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('release.xlsx', skiprows=4) #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df_1.iloc[ : , :<span class="dv">7</span>]</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>newcolumns1 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>, <span class="st">"Aug_2022"</span>, <span class="st">"Jul_2022"</span>, <span class="st">"Jun_2022"</span>, <span class="st">"Oct_2021"</span>]</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>df_1.columns <span class="op">=</span> newcolumns1</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> df_1.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="bu">list</span>(df_1.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>x1.reverse()</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Jan 2022 - May 2022</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202205.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df_1.iloc[ : , :<span class="dv">7</span>]</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>newcolumns1 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>,<span class="st">"Oct_2022"</span>,<span class="st">"Sep_2022"</span>, <span class="st">"Aug_2022"</span>, <span class="st">"Jul_2022"</span>, <span class="st">"Jun_2022"</span>, <span class="st">"Oct_2021"</span>]</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>df_1.columns <span class="op">=</span> newcolumns1</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> df_1.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="bu">list</span>(df_1.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>x1.reverse()</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Jan 2022 - May 2022</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202205.xlsx', skiprows=4) #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202201.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202201.xlsx', skiprows=4) #alternatively, please use the provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
