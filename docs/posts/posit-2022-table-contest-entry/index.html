@@ -250,13 +250,13 @@ background-size: cover;
 
 
 
-<p>I recently came across the <a href="https://resources.rstudio.com/blog/rstudio-table-contest-2022/">Posit 2022 Table Contest</a> and decided to participate for the first time. I am relatively newer to R but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub,</a> and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.</p>
+<p>I recently came across the <a href="https://resources.rstudio.com/blog/rstudio-table-contest-2022/">Posit 2022 Table Contest</a> and decided to participate for the first time. I am relatively newer to {R} but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub,</a> and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.</p>
 <p>For my entry type, I will walk through the high-level considerations I had in creating tables in R and line charts in Python. My data topic of choice is <a href="https://www.census.gov/construction/c30/c30index.html">Construction Spending in the U.S.</a> as it is relevant to the industry I work in.</p>
 <section id="data-source-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="data-source-considerations">Data Source Considerations</h2>
-<p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the excel reports that are typically available include a span of only a few months at any given time.</p>
+<p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the Excel reports that are typically available include a span of only a few months at any given time.</p>
 <p>For the Posit Table Contest, I merged three different data sets, so I could get an entire year’s worth of data. All data sets were brought into my code via URL links as opposed to static files.</p>
-<p>Here is how I imported the data sets and prepped them for use. Ultimately, I grabbed seasonally adjusted data from the first tab of three data sources (most recent and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
+<p>Here is how I imported the data sets and prepped them for use with {R}. Ultimately, I grabbed seasonally adjusted data from the first tab of three data sources (most recent and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
@@ -268,7 +268,7 @@ background-size: cover;
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># import data - June 2022 - Oct 2022</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202209.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'release.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -288,7 +288,7 @@ background-size: cover;
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202205.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202205.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up data</span></span>
@@ -305,7 +305,7 @@ background-size: cover;
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data from URL</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202201.xlsx' #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#url &lt;- 'pr202201.xlsx' #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>url3 <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="at">file =</span> url,<span class="at">which =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -328,7 +328,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The latest release gets updated approximately every month as new survey results come out from the U.S. Census Bureau. Because of this, the tables and charts will update if the code is run again. However, special attention will need to be given to updating the column names, static annotations, and data sets that get merged over time.</p>
+<p>The latest release gets updated approximately every month as new survey results come out from the U.S. Census Bureau. Because of this, the tables and charts will update if the code is run again. However, special attention will need to be given to updating the column names, static annotations, and data sets that get merged over time. As an alternative, please use the provided spreadsheets on GitHub for exact reproduction at any time after the date of this publishing.</p>
 </div>
 </div>
 </section>
@@ -538,7 +538,7 @@ Important
 </section>
 <section id="line-charts-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="line-charts-with-python">Line Charts with Python</h2>
-<p>Beyond the three tables I created with R, I wanted to take it a bit further with visualizing the time series data, this time with Python as I am a little more familiar with it.</p>
+<p>Beyond the three tables I created with {R}, I wanted to take it a bit further with visualizing the time series data, this time with {Python} as I am a little more familiar with it.</p>
 <p>In much the same way, I brought in the three data sets again, cleaned them up, re-ordered them, combined them, and created a master data frame that was segmented per overall category. The same considerations with the data sources apply here too. Because these are actual links to data as opposed to static, the tables will update on a regular basis and we need to be mindful of what those changes mean in updating any “static” elements.</p>
 <p>For these line charts, I used pandas to bring in the data and matplotlib for the display.</p>
 <div class="cell">
@@ -553,7 +553,7 @@ Important
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read data June 2022 - Oct 2022</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/release.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202209.xlsx', skiprows=4) #alternatively, please use this provided spreadsheet in a static way</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('release.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> df.dropna()</span>
@@ -567,27 +567,30 @@ Important
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Jan 2022 - May 2022</span></span>
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202205.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202205.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> df_2.iloc[ : , :<span class="dv">6</span>]</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>newcolumns2 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"May_2022"</span>,<span class="st">"Apr_2022"</span>, <span class="st">"Mar_2022"</span>, <span class="st">"Feb_2022"</span>, <span class="st">"Jan_2022"</span>]</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>df_2.columns <span class="op">=</span> newcolumns2</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> df_2.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="bu">list</span>(df_2.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>x2.reverse()</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># read data Oct 2021 - Dec 2021</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'https://www.census.gov/construction/c30/xls/pr202201.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="co">#df = pd.read_excel('pr202201.xlsx', skiprows=4) #alternatively, please use this provided spreadsheets on GitHub in a static way</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df.dropna()</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>df_3 <span class="op">=</span> df_3.iloc[ : , :<span class="dv">5</span>]</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>newcolumns3 <span class="op">=</span> [<span class="st">"Type_of_Construction"</span>, <span class="st">"Jan_2022_"</span>, <span class="st">"Dec_2021"</span>, <span class="st">"Nov_2021"</span>, <span class="st">"Oct_2021_"</span>]</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>df_3.columns <span class="op">=</span> newcolumns3</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> df_3.columns[<span class="dv">1</span>:]</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(df_3.columns)[<span class="dv">1</span>:]</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>x3.reverse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -675,7 +678,7 @@ Important
 <p>From there, I adjusted the xticks, yticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the charts because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I ultimately went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the changes I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
 <p>Here is the final result of the charts. These annotations would be examples of items that would likely need to be updated if you refresh the code and data beyond the date of this publishing.</p>
 <p><img src="unnamed-chunk-16-1.png" class="img-fluid"></p>
-<p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to Python and now R. R is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both R and Python for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
+<p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to {Python} and now {R}. {R} is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both R and Python for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
 </section>
 <section id="bonus-presentation-of-tables-and-visuals" class="level2">
 <h2 class="anchored" data-anchor-id="bonus-presentation-of-tables-and-visuals">Bonus Presentation of Tables and Visuals</h2>
