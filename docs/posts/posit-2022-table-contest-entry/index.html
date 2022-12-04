@@ -250,8 +250,8 @@ background-size: cover;
 
 
 
-<p>I recently came across the <a href="https://resources.rstudio.com/blog/rstudio-table-contest-2022/">Posit 2022 Table Contest</a> and decided to participate for the first time. I am relatively newer to {R} but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub,</a> and I have classified my entry as a hybrid “Other” submission type because I consider it sort of a high-level narrative on chart design + mini tutorial on some key elements.</p>
-<p>For my entry type, I will walk through the high-level considerations I had in creating tables in R and line charts in Python. My data topic of choice is <a href="https://www.census.gov/construction/c30/c30index.html">Construction Spending in the U.S.</a> as it is relevant to the industry I work in.</p>
+<p>I recently came across the <a href="https://resources.rstudio.com/blog/rstudio-table-contest-2022/">Posit 2022 Table Contest</a> and decided to participate for the first time. I am relatively newer to {R} but not new to data visualization, so I thought it would be a great opportunity to expand upon my learning. To go along with the official requirements, the code repository for my entry is located on <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub,</a> and I have classified my entry as a hybrid “Other” submission type because I consider it a hybrid high-level narrative on chart/table design + mini tutorial on some key elements.</p>
+<p>For my entry type, I will walk through the high-level considerations I had in creating tables in {R} and line plots in {Python}. My data topic of choice is <a href="https://www.census.gov/construction/c30/c30index.html">Construction Spending in the U.S.</a> as it is relevant to the industry I work in.</p>
 <section id="data-source-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="data-source-considerations">Data Source Considerations</h2>
 <p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the Excel reports that are typically available include a span of only a few months at any given time.</p>
@@ -534,13 +534,13 @@ Important
 <p><a href="https://github.com/ji53ll/Posit-2022-Table-Contest"><img src="Public%20Sector%20Construction.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
-<p>Alternatively, the <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub repository</a> includes the static HTML file for viewing the entire entry all at once. It includes the tables created with R and a series of line charts produced in Python.</p>
+<p>Alternatively, the <a href="https://github.com/ji53ll/Posit-2022-Table-Contest">GitHub repository</a> includes the static HTML file for viewing the entire entry all at once. It includes the tables created with {R} and a series of line plots produced in {Python}.</p>
 </section>
-<section id="line-charts-with-python" class="level2">
-<h2 class="anchored" data-anchor-id="line-charts-with-python">Line Charts with Python</h2>
+<section id="line-plots-with-python" class="level2">
+<h2 class="anchored" data-anchor-id="line-plots-with-python">Line Plots with Python</h2>
 <p>Beyond the three tables I created with {R}, I wanted to take it a bit further with visualizing the time series data, this time with {Python} as I am a little more familiar with it.</p>
 <p>In much the same way, I brought in the three data sets again, cleaned them up, re-ordered them, combined them, and created a master data frame that was segmented per overall category. The same considerations with the data sources apply here too. Because these are actual links to data as opposed to static, the tables will update on a regular basis and we need to be mindful of what those changes mean in updating any “static” elements.</p>
-<p>For these line charts, I used pandas to bring in the data and matplotlib for the display.</p>
+<p>For these line plots, I used {pandas} to bring in the data and {matplotlib} for the display.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import libraries</span></span>
@@ -675,10 +675,10 @@ Important
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>lw2<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>ax1.plot(x, y5, marker=(marker(y5)), lw=lw, color=(colorizer(y5)))</code></p>
-<p>From there, I adjusted the xticks, yticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the charts because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I ultimately went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the changes I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
-<p>Here is the final result of the charts. These annotations would be examples of items that would likely need to be updated if you refresh the code and data beyond the date of this publishing.</p>
+<p>From there, I adjusted the x-ticks, y-ticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the plots because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I ultimately went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the insights I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
+<p>Here is the final result of the line plots. These annotations would be examples of items that would likely need to be updated if you refresh the code and data beyond the date of this publishing.</p>
 <p><img src="unnamed-chunk-16-1.png" class="img-fluid"></p>
-<p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to {Python} and now {R}. {R} is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both R and Python for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
+<p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to {Python} and now {R}. {R} is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both {R} and {Python} for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
 </section>
 <section id="bonus-presentation-of-tables-and-visuals" class="level2">
 <h2 class="anchored" data-anchor-id="bonus-presentation-of-tables-and-visuals">Bonus Presentation of Tables and Visuals</h2>
