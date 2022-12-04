@@ -355,9 +355,9 @@ Important
 <section id="table-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="table-considerations">Table Considerations</h2>
 <p>I explored {gt}, {gtExtras}, {tidyverse}, and other packages to ultimately create the tables.</p>
-<p>My current understanding is that the syntax for these tables sort of works like opaque paint in that different layers are applied in a certain order to get a certain effect. A specific example of this is where I applied special formatting on the “overall summary” categories such as “Nonresidential”, “Residential”, and anything with “Total” in the name to differentiate them a bit from the sub-categories. I have the <code>gt_highlight_cols</code> part before the <code>gt_highlight_rows</code> part, which results in a lighter color for the “overall summary categories” and a slightly darker color for the sub-categories.</p>
+<p>My current understanding is that the syntax for these tables sort of works like opaque paint in that different layers are applied in a certain order to get a certain effect. A specific example of this is where I applied special formatting on the “overall summary” categories such as “Nonresidential,” “Residential,” and anything with “Total” in the name to differentiate them a bit from the sub-categories. I have the <code>gt_highlight_cols</code> part before the <code>gt_highlight_rows</code> part, which results in a lighter color for the “overall summary categories” and a slightly darker color for the sub-categories.</p>
 <p>The sparklines were particularly a challenge to create because these data sets have multiple columns of data over time per construction type, and I wanted each sparkline at the edge of the tables to look like time series charts.</p>
-<p>What ultimately helped me accomplish that was this part of the code where it “mutated” the columns to be read like rows with the exception of a few columns. The “trend” column is what ultimately what is used to display the sparklines.</p>
+<p>What helped me accomplish that was this part of the code where it “mutated” the columns to be read like rows with the exception of a few columns. The “trend” column displays the sparklines.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>final_df_all <span class="ot">&lt;-</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  df_all <span class="sc">%&gt;%</span></span>
@@ -613,12 +613,13 @@ Important
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df_private <span class="op">=</span> df_master[<span class="dv">20</span>:<span class="dv">35</span>]</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df_public <span class="op">=</span> df_master[<span class="dv">36</span>:<span class="dv">50</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>One challenge I had also carried through from the sparkline challenge I had earlier. I needed to find a way to basically take several columns of time series data and make them go into lists for any respective construction category and in the correct time series order. Here is how I ended up doing that. What this does is locate a row that has “Office” as the construction type within the “All Construction” data frame. It then takes in multiple columns worth of data and excludes the first value in the column “Type of Construction” to come up with a list of only costs over time for “Office.”</p>
+<p>One challenge I had also carried through from the sparkline challenge I had earlier. I needed to find a way to take several columns of time series data and make them go into lists for any respective construction category and in the correct time series order. Here is how I ended up doing that.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>y5 <span class="op">=</span> df_all[df_all[<span class="st">"Type_of_Construction"</span>].<span class="bu">str</span>.contains(<span class="st">"Office"</span>)]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y5 <span class="op">=</span> <span class="bu">list</span>(y5.loc[<span class="dv">7</span>])</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y5 <span class="op">=</span> <span class="bu">list</span>(y5[<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>What this does is locate a row that has “Office” as the construction type within the “All Construction” data frame. It then takes in multiple columns worth of data and excludes the first value in the column “Type of Construction” to come up with a list of only costs over time for “Office.”</p>
 </section>
 <section id="conditional-formatting" class="level2">
 <h2 class="anchored" data-anchor-id="conditional-formatting">Conditional Formatting</h2>
