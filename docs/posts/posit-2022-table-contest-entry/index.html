@@ -256,7 +256,7 @@ background-size: cover;
 <h2 class="anchored" data-anchor-id="data-source-considerations">Data Source Considerations</h2>
 <p>The data sources for Construction Spending in the U.S. are ever changing as the survey is conducted with monthly reports. In addition to that, the Excel reports that are typically available include a span of only a few months at any given time.</p>
 <p>For the Posit Table Contest, I merged three different data sets, so I could get an entire year’s worth of data. All data sets were brought into my code via URL links as opposed to static files.</p>
-<p>Here is how I imported the data sets and prepped them for use with {R}. Ultimately, I grabbed seasonally adjusted data from the first tab of three data sources (most recent and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
+<p>Here is how I imported the data sets and prepped them for use with {R}. I grabbed seasonally adjusted data from the first tab of three data sources (most recent and two further back). I skipped the first four rows to go beyond any “header” information in the tables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtExtras)</span>
@@ -354,7 +354,7 @@ Important
 </section>
 <section id="table-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="table-considerations">Table Considerations</h2>
-<p>I explored {gt}, {gtExtras}, {tidyverse}, and other packages to ultimately create the tables.</p>
+<p>I explored {gt}, {gtExtras}, {tidyverse}, and other packages to create the tables.</p>
 <p>My current understanding is that the syntax for these tables sort of works like opaque paint in that different layers are applied in a certain order to get a certain effect. A specific example of this is where I applied special formatting on the “overall summary” categories such as “Nonresidential,” “Residential,” and anything with “Total” in the name to differentiate them a bit from the sub-categories. I have the <code>gt_highlight_cols</code> part before the <code>gt_highlight_rows</code> part, which results in a lighter color for the “overall summary categories” and a slightly darker color for the sub-categories.</p>
 <p>The sparklines were particularly a challenge to create because these data sets have multiple columns of data over time per construction type, and I wanted each sparkline at the edge of the tables to look like time series charts.</p>
 <p>What helped me accomplish that was this part of the code where it “mutated” the columns to be read like rows with the exception of a few columns. The “trend” column displays the sparklines.</p>
@@ -369,7 +369,7 @@ Important
 <p>Here is the full code that produces one table for All Construction. The other two tables are similar. In the order of execution, this code does the following:</p>
 <ol type="1">
 <li>Mutates columns as rows to get the sparklines working</li>
-<li>Selects columns of data to ultimately display</li>
+<li>Selects columns of data to display for the table</li>
 <li>Sets the theme</li>
 <li>Sets the title and subtitle</li>
 <li>Colors/fills in cells conditionally</li>
@@ -675,7 +675,7 @@ Important
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>lw2<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>ax1.plot(x, y5, marker=(marker(y5)), lw=lw, color=(colorizer(y5)))</code></p>
-<p>From there, I adjusted the x-ticks, y-ticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the plots because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I ultimately went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the insights I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
+<p>From there, I adjusted the x-ticks, y-ticks, title, and created annotations for notable points on the charts. I had long debated over the layout of the plots because I wanted the changes to be more apparent, but I also didn’t want them to look misleading in any way with different y-axis scales. I went with a larger chart showing All Construction and then a split the space next to it for Private and Public Sector. I also heavily annotated critical points, so there was no confusion on the insights I wanted to show. I purposely left out “overall summary categories” because all the sub-categories were already shown on the charts.</p>
 <p>Here is the final result of the line plots. These annotations would be examples of items that would likely need to be updated if you refresh the code and data beyond the date of this publishing.</p>
 <p><img src="unnamed-chunk-16-1.png" class="img-fluid"></p>
 <p>I have had various experiences in data visualization in the last couple years, ranging from Tableau to Power BI to {Python} and now {R}. {R} is the newest tool in my toolbox, so I saw this as the perfect opportunity to take something from start to finish with raw data. This was certainly a stretch assignment in both {R} and {Python} for me. I learned a lot from participating in this contest, and I hope to participate in more projects like this in the future. Thanks Posit!</p>
