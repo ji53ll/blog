@@ -1,14 +1,5 @@
 [
   {
-    "listing": "/codeprojects.html",
-    "items": [
-      "/code-projects/christmas-movies-2022/index.html",
-      "/code-projects/tidytuesday-2022-w49/index.html",
-      "/code-projects/posit-2022-table-contest/index.html",
-      "/code-projects/python-r-equivalents-bim-content-revit/index.html"
-    ]
-  },
-  {
     "listing": "/posts.html",
     "items": [
       "/posts/chatgpt-first-impressions/index.html",
@@ -35,6 +26,24 @@
       "/posts/the-quest-for-the-perfect-bim-project/index.html",
       "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-1/index.html",
       "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-2/index.html"
+    ]
+  },
+  {
+    "listing": "/codeprojects.html",
+    "items": [
+      "/code-projects/christmas-movies-2022/index.html",
+      "/code-projects/tidytuesday-2022-w49/index.html",
+      "/code-projects/posit-2022-table-contest/index.html",
+      "/code-projects/python-r-equivalents-bim-content-revit/index.html"
+    ]
+  },
+  {
+    "listing": "/photography.html",
+    "items": [
+      "/photography/Food_Styling/index.html",
+      "/photography/Nature/index.html",
+      "/photography/Portraits/index.html",
+      "/photography/Still_Life/index.html"
     ]
   }
 ]
