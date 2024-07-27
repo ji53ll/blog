@@ -51,7 +51,6 @@
   {
     "listing": "/photography.html",
     "items": [
-      "/photography/Nature-Landscape/index.html",
       "/photography/Night/index.html",
       "/photography/Still-Life-Food/index.html",
       "/photography/urban/Chicago/index.html",
@@ -61,6 +60,7 @@
       "/photography/urban/Miami/index.html",
       "/photography/urban/Minnesota/index.html",
       "/photography/Action-Portraits/index.html",
+      "/photography/Nature-Landscape/index.html",
       "/photography/Events/index.html"
     ]
   }
