@@ -50,6 +50,19 @@
   },
   {
     "listing": "/photography.html",
-    "items": []
+    "items": [
+      "/photography/urban.html",
+      "/photography/Action-Portraits/index.html",
+      "/photography/Events/index.html",
+      "/photography/Nature-Landscape/index.html",
+      "/photography/Night/index.html",
+      "/photography/Still-Life-Food/index.html",
+      "/photography/urban/Chicago/index.html",
+      "/photography/urban/Denver/index.html",
+      "/photography/urban/Getting-There/index.html",
+      "/photography/urban/Las-Vegas/index.html",
+      "/photography/urban/Miami/index.html",
+      "/photography/urban/Minnesota/index.html"
+    ]
   }
 ]
