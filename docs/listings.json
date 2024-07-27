@@ -1,5 +1,41 @@
 [
   {
+    "listing": "/urban.html",
+    "items": [
+      "/urban/Chicago/index.html",
+      "/urban/Denver/index.html",
+      "/urban/Las-Vegas/index.html",
+      "/urban/Miami/index.html",
+      "/urban/Minnesota/index.html",
+      "/urban/Getting-There/index.html"
+    ]
+  },
+  {
+    "listing": "/photography.html",
+    "items": [
+      "/photography/Action-Portraits/index.html",
+      "/photography/Events/index.html",
+      "/photography/Nature-Landscape/index.html",
+      "/photography/Night/index.html",
+      "/photography/Still-Life-Food/index.html",
+      "/urban/Chicago/index.html",
+      "/urban/Denver/index.html",
+      "/urban/Getting-There/index.html",
+      "/urban/Las-Vegas/index.html",
+      "/urban/Miami/index.html",
+      "/urban/Minnesota/index.html"
+    ]
+  },
+  {
+    "listing": "/codeprojects.html",
+    "items": [
+      "/code-projects/christmas-movies-2022/index.html",
+      "/code-projects/tidytuesday-2022-w49/index.html",
+      "/code-projects/posit-2022-table-contest/index.html",
+      "/code-projects/python-r-equivalents-bim-content-revit/index.html"
+    ]
+  },
+  {
     "listing": "/posts.html",
     "items": [
       "/posts/chatgpt-first-impressions/index.html",
@@ -26,43 +62,6 @@
       "/posts/the-quest-for-the-perfect-bim-project/index.html",
       "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-1/index.html",
       "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-2/index.html"
-    ]
-  },
-  {
-    "listing": "/photography/urban/urban.html",
-    "items": [
-      "/photography/urban/Chicago/index.html",
-      "/photography/urban/Denver/index.html",
-      "/photography/urban/Las-Vegas/index.html",
-      "/photography/urban/Miami/index.html",
-      "/photography/urban/Minnesota/index.html",
-      "/photography/urban/Getting-There/index.html"
-    ]
-  },
-  {
-    "listing": "/codeprojects.html",
-    "items": [
-      "/code-projects/christmas-movies-2022/index.html",
-      "/code-projects/tidytuesday-2022-w49/index.html",
-      "/code-projects/posit-2022-table-contest/index.html",
-      "/code-projects/python-r-equivalents-bim-content-revit/index.html"
-    ]
-  },
-  {
-    "listing": "/photography.html",
-    "items": [
-      "/photography/urban/urban.html",
-      "/photography/Action-Portraits/index.html",
-      "/photography/Events/index.html",
-      "/photography/Nature-Landscape/index.html",
-      "/photography/Night/index.html",
-      "/photography/Still-Life-Food/index.html",
-      "/photography/urban/Chicago/index.html",
-      "/photography/urban/Denver/index.html",
-      "/photography/urban/Getting-There/index.html",
-      "/photography/urban/Las-Vegas/index.html",
-      "/photography/urban/Miami/index.html",
-      "/photography/urban/Minnesota/index.html"
     ]
   }
 ]
