@@ -40,17 +40,18 @@
   {
     "listing": "/photography.html",
     "items": [
-      "/photography/Action and Portrait Photography/index.html",
-      "/photography/Event Photography/index.html",
-      "/photography/Landscape and Nature Photography/index.html",
-      "/photography/Night Photography/index.html",
-      "/photography/Still Life and Food Photography/index.html",
-      "/photography/Urban Photography/Chicago/index.html",
-      "/photography/Urban Photography/Denver/index.html",
-      "/photography/Urban Photography/Getting There/index.html",
-      "/photography/Urban Photography/Las Vegas/index.html",
-      "/photography/Urban Photography/Miami/index.html",
-      "/photography/Urban Photography/Various Minnesota/index.html"
+      "/photography/Action-Portraits/index.html",
+      "/photography/Events/index.html",
+      "/photography/Nature-Landscape/index.html",
+      "/photography/Night/index.html",
+      "/photography/Still-Life-Food/index.html",
+      "/photography/Urban/Chicago/index.html",
+      "/photography/Urban/Denver/index.html",
+      "/photography/Urban/Getting-There/index.html",
+      "/photography/Urban/index.html",
+      "/photography/Urban/Las-Vegas/index.html",
+      "/photography/Urban/Miami/index.html",
+      "/photography/Urban/Minnesota/index.html"
     ]
   }
 ]
