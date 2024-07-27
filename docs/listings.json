@@ -29,7 +29,7 @@
     ]
   },
   {
-    "listing": "/photography/urban.html",
+    "listing": "/photography/urban/urban.html",
     "items": [
       "/photography/urban/Chicago/index.html",
       "/photography/urban/Denver/index.html",
@@ -51,6 +51,7 @@
   {
     "listing": "/photography.html",
     "items": [
+      "/photography/urban/urban.html",
       "/photography/Action-Portraits/index.html",
       "/photography/Events/index.html",
       "/photography/Nature-Landscape/index.html",
