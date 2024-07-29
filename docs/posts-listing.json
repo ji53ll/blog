@@ -1,0 +1,29 @@
+{
+  "listing": "/posts.html",
+  "items": [
+    "/posts/chatgpt-first-impressions/index.html",
+    "/posts/obsidian-adventures/index.html",
+    "/posts/exploring-everyday-possibilities-in-markdown/index.html",
+    "/posts/posit-2022-table-contest-entry/index.html",
+    "/posts/how-to-verify-your-quarto-blog-on-mastodon/index.html",
+    "/posts/wordpress-to-quarto-migration/index.html",
+    "/posts/learning-tips-and-tricks-python/index.html",
+    "/posts/picture-perfect-penguins-dynamic-tableau-shapes/index.html",
+    "/posts/bringing-it-into-perspective-with-shapes/index.html",
+    "/posts/its-the-little-things-small-multiples/index.html",
+    "/posts/personal-project-spotlight-constructing-new-york/index.html",
+    "/posts/welcome-to-the-races-animate-your-line-graphs/index.html",
+    "/posts/a-tableau-breakfast-multicolored-waffle-charts-and-pancakes/index.html",
+    "/posts/jamming-with-parameters-and-more-in-tableau/index.html",
+    "/posts/dont-stop-me-now-animating-data-insights/index.html",
+    "/posts/sankey-charts-creating-a-fun-slide-in-tableau-public/index.html",
+    "/posts/waffles-anyone-an-alternative-to-pie-charts/index.html",
+    "/posts/license-to-simplify-why-less-is-more-in-a-data-viz/index.html",
+    "/posts/and-action-how-to-invite-the-viewer-to-explore/index.html",
+    "/posts/lollipop-charts-a-sweet-data-viz-technique/index.html",
+    "/posts/jitter-plots-an-easy-way-to-make-your-insights-stand-out/index.html",
+    "/posts/the-quest-for-the-perfect-bim-project/index.html",
+    "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-1/index.html",
+    "/posts/the-benefits-of-data-visualization-in-the-aec-industry-pt-2/index.html"
+  ]
+}
