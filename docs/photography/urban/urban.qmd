@@ -1,0 +1,22 @@
+---
+title: "Urban Photography"
+listing:
+  contents:
+    - urban/Chicago
+    - urban/Denver
+    - urban/Las-Vegas
+    - urban/Miami
+    - urban/Minnesota
+    - urban/Getting-There
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+# My Latest Photography Work
+
+Coming Soon!
